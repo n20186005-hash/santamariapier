@@ -38,6 +38,12 @@ export const hero = {
     pt: `Ver a localização no Google Maps`,
     cri: `Bitxá local na Google Maps`,
   } as T,
+  alert: {
+    zh: `<strong>当前状态：</strong>栈桥主体因风暴损毁，正封闭重建中（预计 2027 年完工）。Praia de Santa Maria 海滩及沙滩临时渔市正常开放。`,
+    en: `<strong>Status:</strong> The pier is fenced off for reconstruction after storm damage (expected completion: 2027). Praia de Santa Maria beach and the temporary fish stalls on the sand remain open.`,
+    pt: `<strong>Estado:</strong> O pontão está vedado para reconstrução após danos da tempestade (conclusão prevista: 2027). A Praia de Santa Maria e o mercado provisório na areia continuam abertos.`,
+    cri: `<strong>Stadu:</strong> Puntan sta ku vedason pa rekonstruson dipôs di danu di tempestadi (previson: 2027). Praia di Santa Maria y merkadu provizóriu na areia inda sta abértu.`,
+  } as T,
   statLength: { zh: `评分`, en: `Rating`, pt: `Avaliação`, cri: `Avaliasan` } as T,
   statReviews: { zh: `评价`, en: `reviews`, pt: `avaliações`, cri: `avaliason` } as T,
   statFalls: { zh: `类型`, en: `Type`, pt: `Tipo`, cri: `Tipu` } as T,
@@ -176,6 +182,19 @@ export const rebuild = {
     { zh: `渔民临时在沙滩岸边摆摊卖鱼；原本栈桥上的市集已迁移到海滩侧边。`, en: `Fish sellers are temporarily set up on the beach; the market that used to run on the pier has shifted to the beach side.`, pt: `Os vendedores de peixe estão provisoriamente na areia; o mercado que antes funcionava no pontão foi deslocado para o lado da praia.`, cri: `Vendedór di piski ta sta provizóriu na areia; merkadu ki era na ponton muda pa ladun di praia.` } as T,
     { zh: `以现场围栏与官方通告为准，切勿翻越进入施工区。`, en: `Follow fences and official notices on site, and never cross into the work zone.`, pt: `Respeite as vedações e avisos oficiais no local; não entre na zona de obra.`, cri: `Sigi vedason y avisus ofisial na lugal; ka entra na zona di obra.` } as T,
   ],
+  sourcesLabel: { zh: `引用与来源`, en: `Sources`, pt: `Fontes`, cri: `Fonti` } as T,
+  sources: [
+    {
+      label: { zh: `Governo de Cabo Verde · 2025-09-16`, en: `Governo de Cabo Verde · 2025-09-16`, pt: `Governo de Cabo Verde · 2025-09-16`, cri: `Govérnu di Cabo Verde · 2025-09-16` } as T,
+      url: 'https://www.governo.cv/pontao-de-santa-maria-e-mais-do-que-um-projeto-de-infraestrutura-e-um-simbolo-do-sal-da-sua-historia-e-da-identidade-de-cabo-verde-pm/',
+      note: { zh: `包含 “8,9 milhões de euros / 18 meses” 等关键信息。`, en: `Includes key figures such as “€8.9M / 18 months”.`, pt: `Inclui valores-chave como “8,9 M€ / 18 meses”.`, cri: `Ten valor prinsipal sima “8,9 M€ / 18 mez”.` } as T,
+    },
+    {
+      label: { zh: `UGPE (Governo de Cabo Verde) · 2025-09`, en: `UGPE (Governo de Cabo Verde) · 2025-09`, pt: `UGPE (Governo de Cabo Verde) · 2025-09`, cri: `UGPE (Govérnu di Cabo Verde) · 2025-09` } as T,
+      url: 'https://backend-ugpe.gov.cv/noticias/novo-pontao-de-santa-maria-sera-polo-de-turismo-lazer-e-pesca-com-investimento-de-89-milhoes-de-euros/',
+      note: { zh: `项目背景与资金/工期说明。`, en: `Project background and budget/schedule notes.`, pt: `Contexto do projeto e notas de orçamento/prazo.`, cri: `Kontekstu di projétu y noti di orzamentu/prazu.` } as T,
+    },
+  ],
 };
 
 // ── Practical Info ──
@@ -286,15 +305,13 @@ export const gallery = {
 // ── Reviews ──
 export const reviews = {
   sectionNum: { zh: `游客评价`, en: `Reviews`, pt: `Avaliações` } as T,
-  heading: { zh: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · 来自 4,750 位旅行者`, en: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · from 4,750 travelers`, pt: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · de 4.750 viajantes` } as T,
+  heading: { zh: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · 真实的旅人印记`, en: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · Notes from real travellers`, pt: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · Registos de viajantes reais` } as T,
   viewMoreReviews: { zh: `在 Google 地图上查看更多评价`, en: `View more reviews on Google Maps`, pt: `Ver mais avaliações no Google Maps`, cri: `Odja más avaliason na Google Maps` } as T,
   items: [
-    { stars: '★★★★★', date: '2025-05', title: { zh: `"正午的蓝光名不虚传"`, en: `"The noon blue lives up to it"`, pt: `"O azul do meio-dia é real"` } as T, desc: { zh: `听向导说正午来，果然没错。约 12 点站在洞口，池水蓝得像被点亮的宝石，手机都拍不出十分之一。`, en: `Our guide said come at noon — he was right. Around 12 the pool glows like a lit gem; no phone captures a tenth of it.`, pt: `O guia disse para vir ao meio-dia — tinha razão. Pelas 12 a poça brilha como gema acesa; nem o telemóvel apanha um décimo.` } as T, author: 'Marina C. · 海洋爱好者 · 🇧🇷' },
-    { stars: '★★★★★', date: '2025-04', title: { zh: `"向导让旅程更有温度"`, en: `"Guides made it warmer"`, pt: `"Os guias deram calor"` } as T, desc: { zh: `买票含向导，本地小哥讲了蓝眼的光学原理和落日之窗的传说，比自己瞎逛有意义多了。`, en: `Ticket includes a guide; the local lad explained the optics of the Blue Eye and the sunset-window legend — far better than wandering alone.`, pt: `O bilhete inclui guia; o rapaz local explicou a ótica do Olho Azul e a lenda do pôr do sol — bem melhor que ir sozinho.` } as T, author: 'James W. · 🇺🇸' },
-    { stars: '★★★★<span class="text-black/20">★</span>', date: '2025-03', title: { zh: `"路远但值得"`, en: `"Far but worth it"`, pt: `"Longe mas vale"` } as T, desc: { zh: `从 Santa Maria 包车过来要四十分钟土路，但看到蓝眼那一刻全值了。建议自备饮水，沿途真的什么都没有。`, en: `About 40 min of track from Santa Maria by taxi, but the Blue Eye made it worthwhile. Bring your own water — there is nothing on the way.`, pt: `Cerca de 40 min de terra de Santa Maria de táxi, mas o Olho Azul compensou. Leve água — não há nada no caminho.` } as T, author: 'Lin Y. · 🇨🇳' },
-    { stars: '★★★★★', date: '2025-06', title: { zh: `"落日之窗太治愈"`, en: `"The sunset window healed me"`, pt: `"A janela do sol curou-me"` } as T, desc: { zh: `看完蓝眼没走，留在落日之窗等到太阳落海。风很大但特别安静，是这趟萨尔岛之行最难忘的十分钟。`, en: `After the Eye we stayed for the sunset window until the sun hit the sea. Windy but deeply quiet — the most unforgettable ten minutes of the trip.`, pt: `Depois do Olho ficámos na janela do sol até o sol cair no mar. Vento forte mas quieto — os dez minutos mais memoráveis da viagem.` } as T, author: 'Sofía R. · 🇦🇷' },
-    { stars: '★★★★★', date: '2025-02', title: { zh: `"泳池清凉舒服"`, en: `"The pool was refreshing"`, pt: `"A poça foi refrescante"` } as T, desc: { zh: `蓝眼不能下水，但旁边的火山岩潮池可以浮潜，水清见底、温度刚好，孩子玩得很开心。`, en: `You can't swim in the Eye, but the neighbouring volcanic pool is great for snorkelling — clear, just the right temperature, kids loved it.`, pt: `No Olho não se nada, mas a poça vulcânica ao lado é ótima para snorkel — água limpa, temperatura certa, as crianças adoraram.` } as T, author: 'Rafael M. · 🇧🇷' },
-    { stars: '★★★★<span class="text-black/20">★</span>', date: '2024-11', title: { zh: `"鞋一定要穿对"`, en: `"Wear the right shoes"`, pt: `"Use o calçado certo"` } as T, desc: { zh: `火山岩又尖又烫，我穿凉鞋差点磨破脚。后来向导提醒才换上运动鞋。提醒后来的朋友一定穿包裹好的鞋。`, en: `The lava is sharp and hot; in sandals I nearly shredded my feet. The guide told me to switch to trainers — a tip for friends who come later: wear closed shoes.`, pt: `A lava é afiada e quente; de sandália quase cortei os pés. O guia mandou calçar ténis — aviso aos amigos: usem calçado fechado.` } as T, author: 'Wang H. · 🇨🇳' },
+    { stars: '★★★★★', date: '2025-11', title: { zh: `"哪怕在重建，渔市依然鲜活"`, en: `"Even in rebuild, the fish market lives"`, pt: `"Mesmo em obras, o peixe está vivo"` } as T, desc: { zh: `“虽然木栈桥因为维修被围栏挡住了上不去，但渔民们把交易搬到了旁边的沙滩上。清晨 6 点的沙滩渔市极其震撼，金枪鱼在晨光下闪闪发亮，这就是最真实的佛得角。”`, en: `"The timber pier is fenced off so you can't walk out, but the trade moved to the sand beside it. At 6 a.m. the beach fish market is intense — tuna shining in the first light. This is Cape Verde at its most real."`, pt: `"O pontão está vedado e não dá para caminhar, mas a venda mudou para a areia ao lado. Às 6h o mercado na praia é impressionante — atuns a brilhar na primeira luz. Cabo Verde no seu estado mais real."` } as T, author: 'David L. · 🇬🇧' },
+    { stars: '★★★★★', date: '2026-02', title: { zh: `"离酒店咫尺之遥的落日"`, en: `"Sunset just steps from the hotel"`, pt: `"Pôr do sol a poucos passos"` } as T, desc: { zh: `“住在镇上，每天傍晚都会走到栈桥边看日落。看着彩绘渔船在晚霞中随着海浪摇曳，吹着大西洋的风，非常治愈。”`, en: `"Staying in town, we walked here every evening for the sunset. Painted boats rocking in the glow, Atlantic wind in your face — strangely healing."`, pt: `"Ficando na vila, viemos aqui todas as tardes para o pôr do sol. Barcos pintados a balançar na luz, vento do Atlântico — muito terapêutico."` } as T, author: 'Emma S. · 🇦🇺' },
+    { stars: '★★★★<span class="text-black/20">★</span>', date: '2025-08', title: { zh: `"摄影爱好者的天堂"`, en: `"A paradise for photographers"`, pt: `"Paraíso para fotógrafos"` } as T, desc: { zh: `“一定要早起！渔妇们头顶鱼筐走过沙滩的画面太有张力了。不过记得拍照前要微笑示意，尊重当地人的劳动。”`, en: `"Come early. The peixeiras (fishwives) crossing the sand with baskets on their heads is pure drama. Just ask with a smile before taking close-up photos — respect their work."`, pt: `"Acorde cedo. As peixeiras com cestos na cabeça na areia rendem fotos incríveis. Mas sorria e peça permissão antes de fotografar de perto — respeito pelo trabalho."` } as T, author: 'Chen Y. · 🇨🇳' },
+    { stars: '★★★★★', date: '2026-05', title: { zh: `"期待它重新开放的那天"`, en: `"Waiting for the day it reopens"`, pt: `"À espera do dia da reabertura"` } as T, desc: { zh: `“施工围挡上写着 2027 年完工。虽然这次没能走上长长的木栈道尽头，但在浅滩边看到了游动的鳐鱼，依然是不虚此行。”`, en: `"The fence says completion in 2027. I couldn't walk to the end of the long jetty this time, but I still saw stingrays gliding over the shallows — worth it."`, pt: `"A vedação fala em conclusão em 2027. Não deu para caminhar até ao fim, mas vi raias a deslizar no raso — valeu a pena."` } as T, author: 'Carlos M. · 🇪🇸' },
   ],
 };
 
@@ -312,91 +329,55 @@ export const surrounding = {
 // ── Ecology (海岸生态与物种名录) ──
 export const ecology = {
   sectionNum: { zh: `生态名录`, en: `Ecology`, pt: `Ecologia` } as T,
-  heading: { zh: `荒野间的<em class="text-[color:var(--color-emerald)]">生命脉动</em>`, en: `The pulse of life<br/><em class="text-[color:var(--color-emerald)]"> in the wild</em>`, pt: `O pulso da vida<br/><em class="text-[color:var(--color-emerald)]"> no sertão</em>` } as T,
+  heading: { zh: `沙与海交织的<em class="text-[color:var(--color-emerald)]">浅滩生机</em>`, en: `Life on the shallows<br/><em class="text-[color:var(--color-emerald)]">where sand meets sea</em>`, pt: `Vida no raso<br/><em class="text-[color:var(--color-emerald)]">onde areia encontra o mar</em>` } as T,
   intro: {
-    zh: `Buracona 虽身处火山荒原，却是海陆交汇的生态节点。潮池里的珊瑚鱼、岩缝间的螃蟹，以及掠过海面的海鸟，共同构成萨尔岛最容易被忽略的生命网络。请放慢脚步，你与这些海岸居民的相遇，往往只在一潮之间。`,
-    en: `Though it sits in volcanic wilderness, Buracona is an ecological node where land meets sea. The reef fish in the pools, the crabs in the cracks, and the birds skimming the waves together form the most overlooked web of life on Sal. Slow down — your encounter with these coastal dwellers often lasts but a single tide.`,
-    pt: `Embora no sertão vulcânico, a Buracona é um nó ecológico onde terra e mar se encontram. Os peixes das poças, os caranguejos nas fendas e as aves sobre as ondas formam a teia de vida mais esquecida do Sal. Vá devagar — o encontro dura só uma maré.`,
+    zh: `圣玛丽亚栈桥周边的生态，是一幅人类与海洋生物和谐共生的画卷。平缓的白沙滩与清澈的近海水域，不仅是渔民的天然良港，也是许多海洋与海岸生物的活跃地带。在这里，生态的观察往往伴随着归航的渔船一同展开。`,
+    en: `The ecology around the Santa Maria pier is a quiet portrait of coexistence between people and sea life. The gentle white sand and clear nearshore waters are not only a natural harbour for fishers, but also a lively zone for coastal species. Here, wildlife spotting often begins with the return of the fishing boats.`,
+    pt: `A ecologia em torno do pontão de Santa Maria é um retrato discreto de convivência entre pessoas e vida marinha. A areia branca suave e o mar raso e transparente são um porto natural para os pescadores e também uma zona ativa para espécies costeiras. Aqui, observar a natureza muitas vezes começa com o regresso dos barcos.`,
   } as T,
   iucnVU: { zh: `易危 VU`, en: `Vulnerable VU`, pt: `Vulnerável VU` } as T,
   iucnNT: { zh: `近危 NT`, en: `Near Threatened NT`, pt: `Quase Ameaçado NT` } as T,
   iucnLC: { zh: `无危 LC`, en: `Least Concern LC`, pt: `Pouco Preocupante LC` } as T,
   iucnEN: { zh: `极危 EN`, en: `Endangered EN`, pt: `Em Perigo EN` } as T,
-  secUmbrella: { zh: `旗舰与伞护物种`, en: `Flagship & Umbrella Species`, pt: `Espécies Bandeira e Guarda-chuva` } as T,
-  secCommensal: { zh: `常见共生物种`, en: `Commensal & Observable Species`, pt: `Espécies Comensais e Observáveis` } as T,
-  secFlora: { zh: `海岸植物群`, en: `Coastal Flora`, pt: `Flora Costeira` } as T,
+  secUmbrella: { zh: `伴船飞鸟与浅滩访客`, en: `Signature shore species`, pt: `Espécies marcantes do raso` } as T,
+  secCommensal: { zh: `沙滩常见居民`, en: `Common beach dwellers`, pt: `Habitantes comuns da praia` } as T,
+  secFlora: { zh: `海滩植物`, en: `Beach plants`, pt: `Plantas da praia` } as T,
   species: [
     {
-      name: { zh: `军士鱼`, en: `Sergeant major`, pt: `Castanheta` } as T,
-      latin: 'Abudefduf saxatilis',
-      niche: { zh: `潮池居民`, en: `Tide-pool resident`, pt: `Morador de poça de maré` } as T,
+      name: { zh: `军舰鸟与海鸥`, en: `Frigatebirds & gulls`, pt: `Fragatas e gaivotas` } as T,
+      latin: 'Fregata spp. · Larus spp.',
+      niche: { zh: `伴船飞鸟`, en: `Birds following boats`, pt: `Aves que seguem barcos` } as T,
       desc: {
-        zh: `潮池里黄蓝相间的斑马纹小鱼，胆大不怕人，是 Buracona 火山岩池中最容易观察的海洋生物之一。`,
-        en: `Yellow-and-blue zebra-striped fish in the tide pools, bold and unafraid — among the easiest marine life to observe in Buracona's volcanic pools.`,
-        pt: `Peixinhos amarelo-azuis nas poças de maré, audazes — uma das vidas marinhas mais fáceis de observar nas poças vulcânicas da Buracona.`,
-      } as T,
-      iucn: 'LC',
-      icon: '🐠',
-    },
-    {
-      name: { zh: `岩蟹`, en: `Sally Lightfoot crab`, pt: `Caranguejo` } as T,
-      latin: 'Grapsus grapsus',
-      niche: { zh: `礁石清道夫`, en: `Rock scavenger`, pt: `Carniça de rocha` } as T,
-      desc: {
-        zh: `橙红相间的礁石蟹在浪花边缘飞快爬行，以藻类与落果为食，是海岸线重要的分解者。`,
-        en: `Orange-and-red rock crabs scuttling at the water's edge, eating algae and fallen fruit — key decomposers of the shoreline.`,
-        pt: `Caranguejos vermelho-alaranjados que correm na borda da onda, comem algas e frutos caídos — decompositores da costa.`,
-      } as T,
-      iucn: 'LC',
-      icon: '🦀',
-    },
-    {
-      name: { zh: `海龟`, en: `Loggerhead turtle`, pt: `Tartaruga` } as T,
-      latin: 'Caretta caretta',
-      niche: { zh: `海中访客`, en: `Sea visitor`, pt: `Visitante do mar` } as T,
-      desc: {
-        zh: `萨尔岛周边海域是 loggerhead 海龟的觅食与产卵地，Buracona 清澈的水域偶尔可见其身影（请勿靠近或触摸）。`,
-        en: `The waters around Sal are feeding and nesting grounds for loggerhead turtles; Buracona's clear water occasionally reveals one (do not approach or touch).`,
-        pt: `As águas do Sal são zona de alimentação e desova da tartaruga-comum; a água limpa da Buracona por vezes a mostra (não se aproxime).`,
-      } as T,
-      iucn: 'VU',
-      icon: '🐢',
-    },
-    {
-      name: { zh: `鹲（热带鸟）`, en: `Red-billed tropicbird`, pt: `Rabo-de-palha` } as T,
-      latin: 'Phaethon aethereus',
-      niche: { zh: `掠海飞鸟`, en: `Sea skimmer`, pt: `Ave do mar` } as T,
-      desc: {
-        zh: `雪白长尾的热带鸟在海面上方盘旋捕食，是萨尔岛荒岸上最优雅的剪影之一。`,
-        en: `Snow-white, long-tailed tropicbirds wheel above the waves — among the most elegant silhouettes along Sal's wild coast.`,
-        pt: `Aves brancas de cauda longa planam sobre as ondas — uma das silhuetas mais elegantes do litoral do Sal.`,
+        zh: `当清晨第一批渔船靠近海岸，这些海鸟便会在空中盘旋。它们时常在渔妇（peixeiras）处理鱼类时掠过沙滩或海面，捡拾散落的鱼虾碎屑。`,
+        en: `As the first boats approach at dawn, these seabirds circle overhead. They often skim the sand and water while peixeiras (fishwives) handle the catch, picking up small scraps of fish and shrimp.`,
+        pt: `Quando os primeiros barcos se aproximam ao amanhecer, estas aves marinhas circulam no céu. Muitas vezes passam rasantes sobre a areia e a água enquanto as peixeiras tratam o pescado, apanhando pequenos restos.`,
       } as T,
       iucn: 'LC',
       icon: '🐦',
     },
     {
-      name: { zh: `佛得角壁虎`, en: `Cape Verde wall gecko`, pt: `Lagarto` } as T,
-      latin: 'Tarentola caboverdiana',
-      niche: { zh: `熔岩居民`, en: `Lava resident`, pt: `Morador da lava` } as T,
+      name: { zh: `鳐鱼（Stingrays）`, en: `Stingrays`, pt: `Raias (stingrays)` } as T,
+      latin: 'Dasyatidae spp.',
+      niche: { zh: `浅水访客`, en: `Shallow-water visitor`, pt: `Visitante do raso` } as T,
       desc: {
-        zh: `萨尔岛特有的壁虎，白天躲在熔岩缝隙，黄昏出来捕食昆虫，是这片火山荒原最古老的"原住民"。`,
-        en: `A gecko endemic to Sal, hiding in lava cracks by day and hunting insects at dusk — among the oldest "natives" of this volcanic wilderness.`,
-        pt: `Lagarto endémico do Sal, esconde-se nas fendas de lava de dia e caça insetos à tarde — dos "nativos" mais antigos do sertão.`,
+        zh: `在栈桥附近的浅水区，经常能看到扁平的鳐鱼贴着沙底游动。它们偶尔会在渔获卸载区附近徘徊觅食。请保持距离，仅作观赏。`,
+        en: `In the shallows near the pier, you can often spot stingrays gliding close to the sandy bottom. They sometimes roam near the unloading area in search of food. Keep your distance and observe only.`,
+        pt: `No raso junto ao pontão, é comum ver raias a deslizar coladas ao fundo arenoso. Às vezes circulam perto da zona de descarga à procura de alimento. Mantenha distância e observe apenas.`,
       } as T,
       iucn: 'LC',
-      icon: '🦎',
+      icon: '🦈',
     },
     {
-      name: { zh: `耐旱灌木`, en: `Drought-tolerant scrub`, pt: `Arbusto resistente` } as T,
-      latin: 'Frankenia spp.',
-      niche: { zh: `海岸植被`, en: `Coastal vegetation`, pt: `Vegetação costeira` } as T,
+      name: { zh: `沙蟹（Ghost Crabs）`, en: `Ghost crabs`, pt: `Caranguejo-fantasma` } as T,
+      latin: 'Ocypode cursor',
+      niche: { zh: `沙滩清道夫`, en: `Sand cleaner`, pt: `Faxineiro da areia` } as T,
       desc: {
-        zh: `贴着熔岩生长的耐旱盐生灌木，根系固沙、为昆虫与爬行动物提供荫蔽，是荒原生态的骨架。`,
-        en: `Drought-hardy coastal scrub clinging to the lava, its roots holding the sand and sheltering insects and reptiles — the backbone of the wilderness.`,
-        pt: `Arbusto resistente colado à lava, as raízes fixam a areia e abrigam insetos e répteis — a espinha do sertão.`,
+        zh: `这种身体几乎与白沙融为一体的小螃蟹，在清晨和傍晚最为活跃。它们在沙滩上飞速横行，清理海浪推上岸的有机物，是维持沙滩清洁的重要一环。`,
+        en: `These small crabs, almost the same colour as the white sand, are most active at dawn and dusk. They sprint across the beach, clearing organic matter washed ashore — a key part of keeping the sand clean.`,
+        pt: `Quase da cor da areia branca, estes pequenos caranguejos são mais ativos de manhã cedo e ao fim da tarde. Correm pela praia e limpam matéria orgânica trazida pelas ondas — parte importante da manutenção natural da areia.`,
       } as T,
       iucn: 'LC',
-      icon: '🌿',
+      icon: '🦀',
     },
   ],
 };
@@ -406,41 +387,41 @@ export const faq = {
   sectionNum: { zh: `官方访客指南`, en: `Official Visitor Guide`, pt: `Guia Oficial do Visitante` } as T,
   heading: { zh: `访客指南与<em class="text-[color:var(--color-emerald)]">常见问题</em>`, en: `Visitor Guide &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, pt: `Guia do visitante &<em class="text-[color:var(--color-emerald)]"> perguntas frequentes</em>` } as T,
   disclaimer: {
-    zh: `以下信息由 buracona 独立科普团队根据公开资料整理，仅供访客参考。出行前请通过佛得角官方旅游渠道核实最新政策。`,
-    en: `The following information has been compiled by the independent buracona editorial team from publicly available sources and is provided for visitor reference only. Please verify the latest policies through official Cape Verde tourism channels before your visit.`,
-    pt: `As informações a seguir foram compiladas pela equipe editorial independente do buracona a partir de fontes públicas e são fornecidas apenas para referência. Verifique as políticas mais recentes pelos canais oficiais de turismo de Cabo Verde antes de sua visita.`,
+    zh: `以下信息由本独立科普团队根据当地实况整理，仅供访客参考。出行前请通过佛得角官方渠道核实最新政策与施工通告。`,
+    en: `The following information is compiled by an independent editorial team based on on-site observations, for visitor reference only. Please verify the latest policies and construction notices through official Cape Verde channels before travelling.`,
+    pt: `As informações a seguir foram compiladas por uma equipa editorial independente com base em observação no local, apenas para referência. Verifique as políticas e avisos de obras mais recentes pelos canais oficiais de Cabo Verde antes de viajar.`,
   } as T,
   items: [
     {
-      q: { zh: `需要门票吗？开放时间是？`, en: `Is there an entrance fee? What are the hours?`, pt: `Tem entrada? Qual o horário?` } as T,
+      q: { zh: `参观栈桥和沙滩需要门票吗？`, en: `Do I need a ticket to visit the pier and beach?`, pt: `Preciso de bilhete para visitar o pontão e a praia?` } as T,
       a: {
-        zh: `Buracona 由当地社区协会管理，需购票并由向导陪同进入，每日 09:00–18:00 开放。价格以现场公示为准，建议备好现金。`,
-        en: `Buracona is managed by a local community association — paid entry with a guide, open daily 09:00–18:00. Price as posted on site; bring cash.`,
-        pt: `A Buracona é gerida por associação comunitária — entrada paga com guia, aberta diariamente 09:00–18:00. Preço conforme aviso no local; leve dinheiro.`,
+        zh: `完全免费。无论是圣玛丽亚沙滩（Praia de Santa Maria）还是渔市，都是开放的公共区域，无需购买任何门票。`,
+        en: `Completely free. Both Praia de Santa Maria and the fish market area are public spaces — no ticket is required.`,
+        pt: `Totalmente gratuito. Tanto a Praia de Santa Maria como a zona do mercado do peixe são espaços públicos — não precisa de bilhete.`,
       } as T,
     },
     {
-      q: { zh: `如何前往 Buracona？`, en: `How do I get to Buracona?`, pt: `Como chego à Buracona?` } as T,
+      q: { zh: `栈桥封闭了，我还能看到渔获拍卖吗？`, en: `If the pier is closed, can I still see the fish auction?`, pt: `Com o pontão fechado, ainda dá para ver o leilão do peixe?` } as T,
       a: {
-        zh: `最方便的方式是从 Santa Maria 包车或搭乘 aluguer 共享出租车北上约 30 公里；也可从 Espargos 机场租车自驾，最后一段为非铺装路面。无公交直达。`,
-        en: `The easiest way is a taxi or shared aluguer from Santa Maria, ~30 km north. Or rent a car from Espargos airport — the final stretch is unpaved. There is no direct bus.`,
-        pt: `O mais fácil é táxi ou aluguer de Santa Maria, ~30 km norte. Ou alugue carro em Espargos — o último trecho é de terra. Não há autocarro direto.`,
+        zh: `可以！虽然无法走上木质栈道，但渔民们已将卸货和交易地点临时转移到栈桥根部的沙滩和旁边的遮阳棚下。每天清晨的渔获拍卖通常仍会进行。`,
+        en: `Yes. While you cannot walk onto the timber jetty, unloading and trading have temporarily shifted to the sand at the pier’s base and nearby shade structures. The dawn auction usually still happens.`,
+        pt: `Sim. Embora não seja possível caminhar sobre o pontão, a descarga e a venda foram transferidas provisoriamente para a areia junto à base e para estruturas de sombra próximas. O leilão ao amanhecer geralmente continua.`,
       } as T,
     },
     {
       q: { zh: `什么时候是最佳到访时间？`, en: `When is the best time to visit?`, pt: `Qual o melhor horário para visitar?` } as T,
       a: {
-        zh: `<strong>看蓝眼：</strong>正午前后（约 11:00–14:00）太阳最高，蓝光最盛。<br/><br/><strong>看落日：</strong>留到黄昏，步行几分钟到"落日之窗"目送太阳沉入大西洋。`,
-        en: `<strong>Blue Eye:</strong> around midday (≈11:00–14:00) the sun is highest and the blue glow peaks.<br/><br/><strong>Sunset:</strong> stay till dusk and walk a few minutes to the "Last Breath of the Sun" ledge as the sun drops into the Atlantic.`,
-        pt: `<strong>Olho Azul:</strong> perto do meio-dia (≈11:00–14:00) o sol está mais alto e o azul é mais forte.<br/><br/><strong>Pôr do sol:</strong> fique até a tarde e caminhe poucos minutos até a plataforma do "Último Suspiro do Sol".`,
+        zh: `<strong>感受人文：</strong>早上 06:00 – 08:30。这是渔船归航、渔市交易最鼎盛的时段。<br/><br/><strong>欣赏风光：</strong>傍晚 17:30 之后。适合在沙滩边散步，看夕阳染红大西洋和停泊的彩绘渔船。`,
+        en: `<strong>For culture:</strong> 06:00–08:30, when boats return and the fish trade peaks.<br/><br/><strong>For scenery:</strong> after 17:30, for an easy beach walk and the Atlantic sunset over painted boats.`,
+        pt: `<strong>Para a vida local:</strong> 06:00–08:30, quando os barcos regressam e o comércio do peixe atinge o auge.<br/><br/><strong>Para a paisagem:</strong> depois das 17:30, para caminhar na praia e ver o pôr do sol sobre os barcos pintados.`,
       } as T,
     },
     {
-      q: { zh: `参观安全吗？`, en: `Is it safe to visit?`, pt: `É seguro visitar?` } as T,
+      q: { zh: `交通方式及周边设施如何？`, en: `How do I get there, and what facilities are nearby?`, pt: `Como chegar e que serviços existem por perto?` } as T,
       a: {
-        zh: `地面是锋利且吸热火山熔岩，容易割伤与烫伤，请穿包裹性好的运动鞋、带足饮水与防晒，并全程跟随向导，勿翻越护栏或跳水。`,
-        en: `The ground is sharp, heat-holding volcanic lava — wear closed sturdy shoes, bring water and sun protection, and stay with your guide at all times. Do not climb rails or dive.`,
-        pt: `O chão é lava vulcânica afiada e quente — use calçado fechado e resistente, leve água e protetor solar, e fique com o guia. Não suba nas grades nem mergulhe.`,
+        zh: `栈桥位于圣玛丽亚镇的正中心，从镇上绝大多数酒店和民宿步行 5–15 分钟即可抵达。周边海滨大道（Avenida da Praia）沿线遍布餐馆、咖啡馆和冲浪俱乐部，游览结束后就餐或休息很方便。`,
+        en: `The pier sits in the centre of Santa Maria town, walkable from most hotels and guesthouses in 5–15 minutes. Along Avenida da Praia you’ll find restaurants, cafés and surf clubs for an easy stop afterwards.`,
+        pt: `O pontão fica mesmo no centro de Santa Maria, a 5–15 minutos a pé da maioria dos hotéis e alojamentos. Na Avenida da Praia há muitos restaurantes, cafés e clubes de surf para descansar depois.`,
       } as T,
     },
   ],
@@ -449,72 +430,55 @@ export const faq = {
 // ── Leave No Trace (荒野游览公约) ──
 export const leaveNoTrace = {
   sectionNum: { zh: `游览公约`, en: `Visitor Code`, pt: `Código do Visitante` } as T,
-  heading: { zh: `荒野游览<em class="text-[color:var(--color-emerald)]">公约</em>`, en: `Leave No Trace<em class="text-[color:var(--color-emerald)]"> Code</em>`, pt: `Código de<em class="text-[color:var(--color-emerald)]"> Não Deixe Rastros</em>` } as T,
+  heading: { zh: `海岸共生<em class="text-[color:var(--color-emerald)]">准则</em>`, en: `Coexistence<em class="text-[color:var(--color-emerald)]"> code</em>`, pt: `Regras de<em class="text-[color:var(--color-emerald)]"> convivência</em>` } as T,
   subtitle: {
-    zh: `作为萨尔岛的公共空间，Buracona 属于每一位岛民与旅人。请在到访前阅读并承诺遵守以下行为准则，让这片蓝光长久清澈。`,
-    en: `As a public space on Sal, Buracona belongs to every islander and traveller. Please read and commit to the following code before your visit, so this blue stays clear for all.`,
-    pt: `Como espaço público do Sal, a Buracona é de todos. Leia e comprometa-se com este código antes de ir, para que o azul fique claro para todos.`,
+    zh: `圣玛丽亚的沙滩与栈桥不仅是风景，更是当地人赖以生存的“海上农场”。请在到访前阅读并承诺遵守以下行为准则，让这片海岸长久保持它的纯粹与活力。`,
+    en: `Santa Maria’s beach and pier are not only scenery — they are also a working “sea farm” that supports local livelihoods. Please read and commit to the guidelines below so the shore can remain clean and alive.`,
+    pt: `A praia e o pontão de Santa Maria não são apenas paisagem — são também uma “quinta no mar” que sustenta a vida local. Leia e cumpra as regras abaixo para manter esta costa pura e viva.`,
   } as T,
   rules: [
     {
+      icon: '🚧',
+      title: { zh: `尊重施工界限`, en: `Respect construction barriers`, pt: `Respeite as vedações` } as T,
+      desc: {
+        zh: `栈桥目前处于封闭重建状态。为安全与工程顺利进行，切勿攀爬、破坏或越过施工围挡。`,
+        en: `The pier is currently fenced off for reconstruction. For your safety and to support the works, do not climb, damage, or cross barriers.`,
+        pt: `O pontão está vedado para reconstrução. Pela sua segurança e pelo bom andamento da obra, não suba, não danifique e não ultrapasse as vedações.`,
+      } as T,
+    },
+    {
+      icon: '🤝',
+      title: { zh: `镜头里的温度与尊重`, en: `Ask before close-up photos`, pt: `Peça permissão para fotografar` } as T,
+      desc: {
+        zh: `渔市是当地人的工作场所，而非表演。近距离拍摄渔妇（peixeiras）或渔民作业时，请先用目光或微笑征求同意。`,
+        en: `The fish market is a workplace, not a show. Before taking close-up photos of peixeiras (fishwives) or fishers at work, ask with eye contact or a smile.`,
+        pt: `O mercado do peixe é local de trabalho, não espetáculo. Antes de fotografar de perto as peixeiras ou pescadores, peça permissão com um sorriso.`,
+      } as T,
+    },
+    {
       icon: '🚯',
-      title: { zh: `不留垃圾`, en: `Pack It In, Pack It Out`, pt: `Leve seu lixo embora` } as T,
+      title: { zh: `不留下一片塑料`, en: `Leave no plastic`, pt: `Não deixe plástico` } as T,
       desc: {
-        zh: `荒原上没有垃圾桶。所有废弃物（包括果皮、纸巾、水瓶）请自行带走。塑料被风吹入蓝池，会伤害潮间生物。`,
-        en: `There are no bins in the wilderness. Carry out all waste (peels, tissues, bottles). Plastic blown into the blue pool harms tide-pool life.`,
-        pt: `Não há lixeiras no sertão. Leve tudo (cascas, lenços, garrafas). O plástico no azul fere a vida da maré.`,
+        zh: `沙滩风大，请务必保管好随身垃圾（尤其是塑料袋、水瓶）。塑料一旦入海，会对鳐鱼与海龟造成致命威胁。`,
+        en: `The beach is windy — secure your rubbish, especially plastic bags and bottles. Once in the sea, plastic can be fatal to stingrays and sea turtles.`,
+        pt: `A praia é ventosa — guarde bem o seu lixo, especialmente sacos e garrafas de plástico. No mar, o plástico pode ser fatal para raias e tartarugas.`,
       } as T,
     },
     {
-      icon: '👣',
-      title: { zh: `不偏离步道`, en: `Stay on Paths`, pt: `Permaneça nos caminhos` } as T,
+      icon: '🚶',
+      title: { zh: `给作业让出空间`, en: `Keep work paths clear`, pt: `Deixe passagem livre` } as T,
       desc: {
-        zh: `火山岩上的潮池生态极其脆弱。请走既有小径，不要踩踏岩池与附着的贝类。`,
-        en: `The tide-pool life on the lava is extremely fragile. Use existing paths; don't trample pools or attached shellfish.`,
-        pt: `A vida das poças na lava é frágil. Use os caminhos; não pise poças nem moluscos presos.`,
-      } as T,
-    },
-    {
-      icon: '🤫',
-      title: { zh: `保持安静，尊重落日`, en: `Keep Quiet, Respect the Sunset`, pt: `Mantenha silêncio, respeite o sol` } as T,
-      desc: {
-        zh: `黄昏时分，请收起外放音响，将交谈声降到最低。当"落日之窗"的太阳沉海，请安静目送，而非喧哗盖过它。`,
-        en: `At dusk, put away speakers and lower your voice. When the sun sinks at the "Last Breath of the Sun", watch in quiet, don't drown it with noise.`,
-        pt: `Ao entardecer, guarde silêncio e baixe a voz. Quando o sol se põe no "Último Suspiro do Sol", veja em silêncio.`,
-      } as T,
-    },
-    {
-      icon: '🐢',
-      title: { zh: `不投喂、不触碰野生动物`, en: `No Feeding or Touching Wildlife`, pt: `Não alimente nem toque a fauna` } as T,
-      desc: {
-        zh: `潮池鱼、蟹与海龟看似亲近，但投喂与触碰会改变其行为并带来风险。请只远观，把食物收好。`,
-        en: `The pool fish, crabs and turtles look friendly, but feeding or touching changes their behaviour and risks them. Observe from afar and keep food stowed.`,
-        pt: `Os peixes, caranguejos e tartarugas parecem amigáveis, mas alimentar ou tocar muda o comportamento. Observe de longe.`,
-      } as T,
-    },
-    {
-      icon: '🏊',
-      title: { zh: `只在指定水域戏水`, en: `Swim Only in Designated Water`, pt: `Nade só na água indicada` } as T,
-      desc: {
-        zh: `蓝眼洞本身禁止下水；仅可在向导指定的开放潮池浮潜戏水，避免扰动洞底生态。`,
-        en: `The Blue Eye itself is off-limits for swimming; only snorkel in the open pool your guide indicates, to avoid disturbing the cave floor.`,
-        pt: `O próprio Olho Azul é proibido para banho; só mergulhe na poça aberta que o guia indicar.`,
-      } as T,
-    },
-    {
-      icon: '🪨',
-      title: { zh: `注意安全，远离锋利熔岩`, en: `Stay Safe, Off the Sharp Lava`, pt: `Cuidado, longe da lava afiada` } as T,
-      desc: {
-        zh: `火山熔岩长期暴晒、边缘锋利；大浪来袭时会没过脚下的平台。请穿包裹鞋，与浪花保持距离，切勿背对大海。`,
-        en: `The lava is sun-baked and sharp; big waves can wash over the platform. Wear closed shoes, keep clear of the surf, and never turn your back on the sea.`,
-        pt: `A lava é quente e afiada; ondas grandes cobrem a plataforma. Use calçado fechado, longe da onda, nunca de costas para o mar.`,
+        zh: `清晨渔获卸载时，沙滩上会有车辆、推车和搬运工人往来。请在一旁观赏，不要阻挡作业通道。`,
+        en: `During dawn unloading, vehicles and workers move across the sand. Watch from the side and keep the working path clear.`,
+        pt: `Durante a descarga ao amanhecer, há veículos e trabalhadores a circular na areia. Observe de lado e não bloqueie o corredor de trabalho.`,
       } as T,
     },
   ],
   closing: {
-    zh: `带走一张蓝光的照片，留下熔岩本来的样子。<br/>让"蓝眼"，在每个正午依旧为萨尔闪烁。`,
-    en: `Take a photo of the blue. Leave the lava as you found it.<br/>Let the Blue Eye keep glowing for Sal, every single noon.`,
-    pt: `Leve uma foto do azul. Deixe a lava como a encontrou.<br/>Que o Olho Azul continue a brilhar para o Sal, a cada meio-dia.`,
+    zh: `带走一张渔火的照片，留下小镇本来的样子。<br/>让这座栈桥，在每个清晨依旧为圣玛丽亚闪烁。`,
+    en: `Take a photo of the fishing lights. Leave the town as you found it.<br/>Let the pier keep glowing for Santa Maria, every single dawn.`,
+    pt: `Leve uma foto das luzes do mar. Deixe a vila como a encontrou.<br/>Que o pontão continue a brilhar para Santa Maria, a cada amanhecer.`,
+    cri: `Leva un foto di luz di mar. Dexa vila komu bu diskobri-l.<br/>Ku puntan kontinua brilha pa Santa Maria, kadankada madrugada.`,
   } as T,
 };
 
@@ -556,11 +520,11 @@ export const partners = {
       attr: { zh: `佛得角官方港口与海事基础设施管理机构。圣玛丽亚栈桥（Pontão de Santa Maria）历史上具有重要的海事装卸功能，如今仍是当地小型渔船停泊与出海活动的枢纽，该网站提供了国家海事发展与航运安全的最高权威背景。`, en: `Cape Verde's official ports and maritime infrastructure authority. The Santa Maria Pier (Pontão de Santa Maria) historically served maritime loading and remains a hub for local fishing boats — the site provides the highest-authority context on maritime development and shipping safety.`, pt: `A autoridade oficial de portos e infraestrutura marítima de Cabo Verde. O Pontão de Santa Maria teve importância histórica no carregamento marítimo e continua a ser um eixo para barcos de pesca locais — o site oferece o enquadramento de maior autoridade sobre desenvolvimento marítimo e segurança da navegação.`, cri: `Autoridadi ofisial di portus y infraestrutura marítimu di Cabo Verde. Puntan di Santa Maria ten importánsia stóriku na karregamentu marítimu y inda é un nô pa barquinhu di piska lokal — site ta da kontextu di más grande autoridadi riba dizenvolvimentu marítimu y sigurança di navegaçon.` } as T,
     },
     {
-      name: { zh: `INMG - Instituto Nacional de Meteorologia e Geofísica（佛得角国家气象局）`, en: `INMG — Instituto Nacional de Meteorologia e Geofísica`, pt: `INMG — Instituto Nacional de Meteorologia e Geofísica`, cri: `INMG — Institutu Nasionál di Meteorologia y Geofízika` } as T,
-      url: 'https://inmg.gov.cv/',
-      abbr: 'INMG',
-      note: { zh: `佛得角 · 气象与海洋`, en: `Cabo Verde · Weather & Ocean`, pt: `Cabo Verde · Meteorologia e Oceano`, cri: `Cabo Verde · Tempu y Oseanu` } as T,
-      attr: { zh: `纯 .gov.cv 政府域名。佛得角国家级气象与海洋环境发布机构。游览圣玛丽亚栈桥、观看渔获交易或参与周边海滩的水上运动高度依赖天气与海况，该网站为游客提供萨尔岛最权威、准确的实时天气和风力预报。`, en: `A pure .gov.cv government domain. Cape Verde's national meteorology and ocean-environment agency. Visiting the pier, watching the fish trade, or doing watersports nearby depends on weather and sea state — this site provides the most authoritative live weather and wind forecasts for Sal.`, pt: `Domínio governamental .gov.cv. A entidade nacional de meteorologia e ambiente oceânico de Cabo Verde. Visitar o Pontão de Santa Maria, ver o comércio de pescado ou praticar desportos aquáticos depende do tempo e do mar — o site fornece previsões em tempo real, de vento e meteorologia, com a maior autoridade para o Sal.`, cri: `Domíniu gov.cv. Órgán nasionál di meteorologia y ambienti oseániku di Cabo Verde. Visita Puntan di Santa Maria, odja tranzason di piski o fazé desportu aquátiku na praia dependi di tempu y mar — kel site ta da previson di vento y tempu, ao bibu, ku más autoridadi pa Sal.` } as T,
+      name: { zh: `世界气象组织（WMO）- 佛得角`, en: `World Meteorological Organization (WMO) — Cape Verde`, pt: `Organização Meteorológica Mundial (WMO) — Cabo Verde`, cri: `Organizason Meteorológiku Mundiál (WMO) — Cabo Verde` } as T,
+      url: 'https://wmo.int/',
+      abbr: 'WMO',
+      note: { zh: `国际机构 · 气象与气候`, en: `International body · Weather & Climate`, pt: `Organismo internacional · Meteorologia e Clima`, cri: `Órgán internasional · Tempu y Klima` } as T,
+      attr: { zh: `世界气象组织（WMO）是联合国系统内负责天气、气候与水文合作的权威国际机构。对于关注圣玛丽亚栈桥海风、浪况与极端天气背景的访客而言，WMO 可作为理解佛得角所处大西洋气候带与区域天气风险的国际参考来源。`, en: `The World Meteorological Organization (WMO) is the UN's authoritative international body for cooperation on weather, climate, and hydrology. For visitors following wind, swell, and severe-weather context around the Pier of Santa Maria, WMO offers a high-level international reference for Cape Verde's Atlantic climate setting and regional weather risks.`, pt: `A Organização Meteorológica Mundial (WMO) é o organismo internacional de referência do sistema das Nações Unidas para cooperação em meteorologia, clima e hidrologia. Para quem acompanha vento, ondulação e contexto de fenómenos extremos no Pontão de Santa Maria, a WMO funciona como fonte internacional de enquadramento sobre o clima atlântico de Cabo Verde e os riscos meteorológicos regionais.`, cri: `Organizason Meteorológiku Mundiál (WMO) é órgán internasionál di sistema di Nasons Unidu pa koperason na meteorologia, klima y hidrologia. Pa kenha sta odja ventu, ondason y fenómenu di tempu forti na Puntan di Santa Maria, WMO ta sirbi komu fonti internasionál pa intendi klima atlántiku di Cabo Verde y riskus meteorológiku di rejion.` } as T,
     },
   ],
 };
@@ -579,7 +543,7 @@ export const footer = {
 
 // ── Privacy Policy Page ──
 export const privacy = {
-  title: { zh: `隐私政策 — buracona`, en: `Privacy Policy — buracona`, pt: `Política de Privacidade — buracona` } as T,
+  title: { zh: `隐私政策 — Santa Maria Pier`, en: `Privacy Policy — Santa Maria Pier`, pt: `Política de Privacidade — Santa Maria Pier` } as T,
   lastUpdated: { zh: `最后更新时间：2026年7月`, en: `Last updated: July 2026`, pt: `Última atualização: Julho de 2026` } as T,
   h1: { zh: `隐私政策`, en: `Privacy Policy`, pt: `Política de Privacidade` } as T,
   h2_collect: { zh: `我们收集的信息`, en: `Information We Collect`, pt: `Informações que coletamos` } as T,
@@ -596,9 +560,9 @@ export const privacy = {
   } as T,
   h2_third: { zh: `第三方服务`, en: `Third-Party Services`, pt: `Serviços de terceiros` } as T,
   p_third: {
-    zh: `我们的网站可能会使用第三方服务，例如谷歌地图（用于嵌入式地图和位置数据）和谷歌分析（用于流量分析）。本站图片均为 Buracona 实地拍摄并存储于本服务器。这些服务均有各自的隐私政策。`,
-    en: `Our website may use third-party services, such as Google Maps (for embedded maps and location data) and Google Analytics (for traffic analysis). All photographs on this site are taken at Buracona and hosted on our own server. These services have their own privacy policies.`,
-    pt: `Nosso site pode usar serviços de terceiros, como Google Maps (para mapas incorporados e dados de localização) e Google Analytics (para análise de tráfego). Todas as fotos do site foram feitas na Buracona e hospedadas em nosso próprio servidor. Esses serviços têm suas próprias políticas de privacidade.`,
+    zh: `我们的网站可能会使用第三方服务，例如谷歌地图（用于嵌入式地图和位置数据）和谷歌分析（用于流量分析）。本站图片均为 Pontão de Santa Maria（圣玛丽亚栈桥）及周边实地拍摄并存储于本服务器。这些服务均有各自的隐私政策。`,
+    en: `Our website may use third-party services, such as Google Maps (for embedded maps and location data) and Google Analytics (for traffic analysis). All photographs on this site are taken around the Pier of Santa Maria (Pontão de Santa Maria) and hosted on our own server. These services have their own privacy policies.`,
+    pt: `Nosso site pode usar serviços de terceiros, como Google Maps (para mapas incorporados e dados de localização) e Google Analytics (para análise de tráfego). Todas as fotos do site foram feitas no Pontão de Santa Maria e arredores e hospedadas em nosso próprio servidor. Esses serviços têm suas próprias políticas de privacidade.`,
   } as T,
   h2_rights: { zh: `您的权利`, en: `Your Rights`, pt: `Seus direitos` } as T,
   p_rights: {
@@ -610,14 +574,14 @@ export const privacy = {
 
 // ── Terms of Service Page ──
 export const terms = {
-  title: { zh: `服务条款 — buracona`, en: `Terms of Service — buracona`, pt: `Termos de Serviço — buracona` } as T,
+  title: { zh: `服务条款 — Santa Maria Pier`, en: `Terms of Service — Santa Maria Pier`, pt: `Termos de Serviço — Santa Maria Pier` } as T,
   lastUpdated: { zh: `最后更新时间：2026年7月`, en: `Last updated: July 2026`, pt: `Última atualização: Julho de 2026` } as T,
   h1: { zh: `服务条款`, en: `Terms of Service`, pt: `Termos de Serviço` } as T,
   h2_acceptance: { zh: `接受条款`, en: `Acceptance of Terms`, pt: `Aceitação dos termos` } as T,
   p_acceptance: {
-    zh: `访问和使用 buracona，即表示您同意受这些服务条款的约束。`,
-    en: `By accessing and using buracona, you agree to be bound by these Terms of Service.`,
-    pt: `Ao acessar e usar o buracona, você concorda em ficar vinculado a estes Termos de Serviço.`,
+    zh: `访问和使用 Santa Maria Pier，即表示您同意受这些服务条款的约束。`,
+    en: `By accessing and using Santa Maria Pier, you agree to be bound by these Terms of Service.`,
+    pt: `Ao acessar e usar o Santa Maria Pier, você concorda em ficar vinculado a estes Termos de Serviço.`,
   } as T,
   h2_content: { zh: `内容使用`, en: `Content Usage`, pt: `Uso do conteúdo` } as T,
   p_content: {
@@ -633,9 +597,9 @@ export const terms = {
   } as T,
   h2_ip: { zh: `知识产权`, en: `Intellectual Property`, pt: `Propriedade intelectual` } as T,
   p_ip: {
-    zh: `本网站设计和原创内容受版权保护。站内图片均为 Buracona 实地拍摄，版权归本网站所有。Google 地图数据的使用符合 Google 的服务条款。`,
-    en: `The website design and original content are protected by copyright. All photographs on this site are taken at Buracona and are owned by this website. Google Maps data is used in accordance with Google's Terms of Service.`,
-    pt: `O design do site e o conteúdo original são protegidos por direitos autorais. Todas as fotos do site foram feitas na Buracona e pertencem a este site. Os dados do Google Maps são usados de acordo com os Termos de Serviço do Google.`,
+    zh: `本网站设计和原创内容受版权保护。站内图片均为 Pontão de Santa Maria（圣玛丽亚栈桥）及周边实地拍摄，版权归本网站所有。Google 地图数据的使用符合 Google 的服务条款。`,
+    en: `The website design and original content are protected by copyright. All photographs on this site are taken around the Pier of Santa Maria (Pontão de Santa Maria) and are owned by this website. Google Maps data is used in accordance with Google's Terms of Service.`,
+    pt: `O design do site e o conteúdo original são protegidos por direitos autorais. Todas as fotos do site foram feitas no Pontão de Santa Maria e arredores e pertencem a este site. Os dados do Google Maps são usados de acordo com os Termos de Serviço do Google.`,
   } as T,
   h2_liability: { zh: `责任限制`, en: `Limitation of Liability`, pt: `Limitação de responsabilidade` } as T,
   p_liability: {
@@ -648,7 +612,7 @@ export const terms = {
 
 // ── Cookie Settings Page ──
 export const cookies = {
-  title: { zh: `Cookie 设置 — buracona`, en: `Cookie Settings — buracona`, pt: `Configurações de Cookies — buracona` } as T,
+  title: { zh: `Cookie 设置 — Santa Maria Pier`, en: `Cookie Settings — Santa Maria Pier`, pt: `Configurações de Cookies — Santa Maria Pier` } as T,
   lastUpdated: { zh: `最后更新时间：2026年7月`, en: `Last updated: July 2026`, pt: `Última atualização: Julho de 2026` } as T,
   h1: { zh: `Cookie 设置`, en: `Cookie Settings`, pt: `Configurações de Cookies` } as T,
   intro: {
@@ -687,6 +651,6 @@ export const cookies = {
 
 // ── Meta ──
 export const meta = {
-  title: { zh: `Buracona · 蓝眼洞 — 佛得角萨尔岛的火山岩蓝洞`, en: `Buracona · Cape Verde's Blue Eye Cave in Sal`, pt: `Buracona · O Olho Azul de Cabo Verde no Sal` } as T,
-  description: { zh: `Buracona（蓝眼洞）完整指南：火山岩蓝洞的光学秘密、正午蓝光、落日之窗、开放时间 09:00–18:00、交通、真实评价与常见问题。`, en: `The complete guide to Buracona (Blue Eye Cave) in Sal, Cape Verde: the optics of the blue glow, midday light, the sunset window, hours 09:00–18:00, transport, real reviews and FAQ.`, pt: `O guia completo da Buracona (Olho Azul) no Sal, Cabo Verde: a ótica do azul, a luz do meio-dia, a janela do sol, horário 09:00–18:00, transporte, avaliações e FAQ.` } as T,
+  title: { zh: `Pontão de Santa Maria · 圣玛丽亚栈桥 — 萨尔岛清晨渔市与白沙日落`, en: `Pontão de Santa Maria · The Pier of Santa Maria in Sal, Cape Verde`, pt: `Pontão de Santa Maria · O pontão emblemático de Sal, Cabo Verde` } as T,
+  description: { zh: `圣玛丽亚栈桥（Pontão de Santa Maria）完整指南：清晨渔获拍卖与沙滩临时渔市、彩绘渔船、镇中心步行可达。提示：栈桥主体因风暴损毁封闭重建中（预计 2027 年完工），海滩正常开放。`, en: `Your field guide to the Pier of Santa Maria (Pontão de Santa Maria): dawn fish auctions and the temporary beach market, painted fishing boats, and an easy walk from Santa Maria town centre. Note: the pier structure is fenced off for reconstruction after storm damage (expected completion: 2027), while the beach remains open.`, pt: `Guia completo do Pontão de Santa Maria: leilão do peixe ao amanhecer e mercado provisório na areia, barcos de pesca pintados e acesso a pé pelo centro de Santa Maria. Nota: o pontão está vedado para reconstrução após danos de tempestade (conclusão prevista: 2027), enquanto a praia continua aberta.` } as T,
 };

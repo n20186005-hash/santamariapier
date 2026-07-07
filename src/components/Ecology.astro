@@ -39,7 +39,7 @@ const floraSpecies = ecology.species.slice(5);
     </p>
   </div>
 
-  <!-- Section 1: Umbrella Species -->
+  {umbrellaSpecies.length > 0 && (
   <div class="mb-20">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
@@ -72,8 +72,9 @@ const floraSpecies = ecology.species.slice(5);
       ))}
     </div>
   </div>
+  )}
 
-  <!-- Section 2: Commensal Species -->
+  {commensalSpecies.length > 0 && (
   <div class="mb-20">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
@@ -106,8 +107,9 @@ const floraSpecies = ecology.species.slice(5);
       ))}
     </div>
   </div>
+  )}
 
-  <!-- Section 3: Endemic Flora -->
+  {floraSpecies.length > 0 && (
   <div>
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
@@ -140,4 +142,5 @@ const floraSpecies = ecology.species.slice(5);
       ))}
     </div>
   </div>
+  )}
 </section>
