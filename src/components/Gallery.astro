@@ -1,0 +1,59 @@
+---
+import type { Lang } from '../i18n/utils';
+import { gallery } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const imgs = [
+  '/gallery/the-pier-of-santa-maria-1.jpg',
+  '/gallery/the-pier-of-santa-maria-2.jpg',
+  '/gallery/the-pier-of-santa-maria-3.jpg',
+  '/gallery/the-pier-of-santa-maria-4.jpg',
+  '/gallery/the-pier-of-santa-maria-5.jpg',
+  '/gallery/the-pier-of-santa-maria-6.jpg',
+  '/gallery/the-pier-of-santa-maria-7.jpg',
+  '/gallery/the-pier-of-santa-maria-8.jpg',
+  '/gallery/the-pier-of-santa-maria-9.jpg',
+  '/gallery/the-pier-of-santa-maria-10.jpg',
+  '/gallery/the-pier-of-santa-maria-11.jpg',
+  '/gallery/the-history-of-santa-maria-pier-1.jpg',
+  '/gallery/the-history-of-santa-maria-pier-2.jpg',
+  '/gallery/the-history-of-santa-maria-pier-4.jpg',
+  '/gallery/the-history-of-santa-maria-pier-5.jpg',
+  '/gallery/the-history-of-santa-maria-pier-6.jpg',
+  '/gallery/the-history-of-santa-maria-pier-7.jpg',
+  '/gallery/renovate-1.jpg',
+  '/gallery/renovate-2.jpg',
+];
+const gmapsUrl = 'https://maps.app.goo.gl/ht67oDnFMoeMxKnFA';
+const bento = [
+  'col-span-8 row-span-2 aspect-[16/10]','col-span-4 aspect-square','col-span-4 aspect-square',
+  'md:col-span-4 col-span-6 aspect-[4/3]','md:col-span-4 col-span-6 aspect-[4/3]','md:col-span-4 col-span-12 aspect-[4/3]',
+  'md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]',
+  'col-span-4 aspect-square','col-span-8 aspect-[16/10]',
+  'md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]','md:col-span-3 col-span-6 aspect-[4/3]',
+  'col-span-4 aspect-square','col-span-8 aspect-[16/9]','col-span-6 aspect-[4/3]','col-span-6 aspect-[4/3]',
+];
+---
+<section id="gallery" class="bg-[color:var(--color-ink)] text-white py-24 md:py-32 grain">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between flex-wrap gap-6 mb-14">
+      <div><div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-sun)]">06 — {_(gallery.sectionNum)}</div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4">{_(gallery.heading)}</h2></div>
+    </div>
+    <div class="grid grid-cols-12 gap-3 md:gap-4">
+      {imgs.map((src, i) => (
+        <figure class={`${bento[i] || 'col-span-6 aspect-[4/3]'} rounded-2xl overflow-hidden`}>
+          <img loading="lazy" alt={`Santa Maria Pier — Pontão de Santa Maria — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
+        </figure>
+      ))}
+    </div>
+    <div class="mt-10 text-center">
+      <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/70 hover:text-[color:var(--color-sun)] transition-colors text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        {_(gallery.viewMorePhotos)}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

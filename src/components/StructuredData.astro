@@ -1,0 +1,32 @@
+---
+import type { Lang } from '../i18n/utils';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const descMap: Record<Lang, string> = {
+  zh: '佛得角萨尔岛圣玛丽亚镇的海滨木质栈桥（Pontão de Santa Maria），清晨的渔获拍卖、彩绘渔船与白沙海滩的起点，是体验当地渔民文化的核心地标。',
+  en: 'A timber fishing pier in Santa Maria town, Sal, Cape Verde (Pontão de Santa Maria) — dawn fish auctions, painted boats and the gateway to Praia de Santa Maria\'s white sand, the heart of local fishing culture.',
+  cri: 'Un ponton di piska na Santa Maria, Sal, Cabo Verde (Puntan di Santa Maria) — vendason di piski na madrugada, barquinhu pintadu y entrada pa aria branku di Praia di Santa Maria, korason di kultura peskador.',
+  pt: 'Um pontão de pesca em Santa Maria, Sal, Cabo Verde (Pontão de Santa Maria) — leilões de peixe ao amanhecer, barcos pintados e a porta da areia branca da Praia de Santa Maria, o coração da cultura pesqueira.',
+};
+
+const tourist = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'TouristAttraction',
+  name: 'The Pier of Santa Maria - Pontão de Santa Maria', description: descMap[lang],
+  image: new URL('/gallery/renovate-1.jpg', Astro.site).href,
+  address: { '@type': 'PostalAddress', streetAddress: 'H3WR+MXW', addressLocality: 'Santa Maria', addressRegion: 'Sal', postalCode: '', addressCountry: 'CV' },
+  geo: { '@type': 'GeoCoordinates', latitude: 16.5989, longitude: -22.9119 },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '7420' },
+});
+
+const faqData = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. The pier is open public infrastructure in Santa Maria; there is no ticket and no fixed gate — walk in from the seafront promenade.' } },
+    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'Walk from the centre of Santa Maria along Avenida da Praia (~5–10 min), or take a short taxi from Amílcar Cabral airport in Espargos (~20 km).' } },
+    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'Dawn (≈05:00–08:00) for the fish auction, and late afternoon for the white-sand sunset over the Atlantic.' } },
+    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The planks are wet and gapped — wear sturdy shoes, keep clear of the working zone, and never climb the rails.' } },
+  ],
+});
+---
+<Fragment set:html={'<script type="application/ld+json">' + tourist + '</script><script type="application/ld+json">' + faqData + '</script>'} />
