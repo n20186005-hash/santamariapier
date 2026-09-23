@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../i18n/utils';
+import { faq } from '../i18n/translations';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 
@@ -8,6 +9,10 @@ const descMap: Record<Lang, string> = {
   en: 'A timber fishing pier in Santa Maria town, Sal, Cape Verde (Pontão de Santa Maria) — dawn fish auctions, painted boats and the gateway to Praia de Santa Maria\'s white sand, the heart of local fishing culture.',
   cri: 'Un ponton di piska na Santa Maria, Sal, Cabo Verde (Puntan di Santa Maria) — vendason di piski na madrugada, barquinhu pintadu y entrada pa aria branku di Praia di Santa Maria, korason di kultura peskador.',
   pt: 'Um pontão de pesca em Santa Maria, Sal, Cabo Verde (Pontão de Santa Maria) — leilões de peixe ao amanhecer, barcos pintados e a porta da areia branca da Praia de Santa Maria, o coração da cultura pesqueira.',
+  de: 'Eine hölzerne Fischerpier im Städtchen Santa Maria, Sal, Cabo Verde (Pontão de Santa Maria) — Fischauktionen bei Tagesanbruch, bunt bemalte Boote und das Tor zum weißen Sand der Praia de Santa Maria, das Herz der lokalen Fischerkultur.',
+  fr: 'Une jetée de pêche en bois dans la ville de Santa Maria, Sal, Cap-Vert (Pontão de Santa Maria) — enchères de poisson à l\'aube, barques peintes et la porte du sable blanc de la Praia de Santa Maria, le cœur de la culture halieutique locale.',
+  es: 'Un muelle pesquero de madera en Santa Maria, Sal, Cabo Verde (Pontão de Santa Maria) — subastas de pescado al amanecer, barcos de pesca pintados y la entrada a la arena blanca de la Praia de Santa Maria, el corazón de la cultura pesquera local.',
+  it: 'Un pontile di legno per la pesca nella cittadina di Santa Maria, Sal, Capo Verde (Pontão de Santa Maria) — aste del pesce all\'alba, barche dipinte e la porta della sabbia bianca della Praia de Santa Maria, il cuore della cultura della pesca locale.',
 };
 
 const tourist = JSON.stringify({
@@ -21,12 +26,11 @@ const tourist = JSON.stringify({
 
 const faqData = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. The pier is open public infrastructure in Santa Maria; there is no ticket and no fixed gate — walk in from the seafront promenade.' } },
-    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'Walk from the centre of Santa Maria along Avenida da Praia (~5–10 min), or take a short taxi from Amílcar Cabral airport in Espargos (~20 km).' } },
-    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'Dawn (≈05:00–08:00) for the fish auction, and late afternoon for the white-sand sunset over the Atlantic.' } },
-    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The planks are wet and gapped — wear sturdy shoes, keep clear of the working zone, and never climb the rails.' } },
-  ],
+  mainEntity: faq.items.map((it) => ({
+    '@type': 'Question',
+    name: it.q[lang] || it.q.en,
+    acceptedAnswer: { '@type': 'Answer', text: it.a[lang] || it.a.en },
+  })),
 });
 ---
 <Fragment set:html={'<script type="application/ld+json">' + tourist + '</script><script type="application/ld+json">' + faqData + '</script>'} />

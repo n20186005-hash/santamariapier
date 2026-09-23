@@ -1,21 +1,21 @@
 import type { Lang } from './utils';
 
-type T = { zh: string; en: string; pt: string; cri?: string };
+type T = { zh: string; en: string; pt: string; cri?: string; de?: string; fr?: string; es?: string; it?: string };
 
 export const t = (s: Record<string, string> | string, lang: Lang): string =>
-  typeof s === 'string' ? s : (s[lang] || s.pt || '');
+  typeof s === 'string' ? s : (s[lang] || s.en || s.pt || '');
 
 // ── Nav ──
 export const nav = {
-  overview: { zh: `前言`, en: `Preamble`, pt: `Preâmbulo`, cri: `Preâmbulu` } as T,
-  highlights: { zh: `亮点`, en: `Highlights`, pt: `Destaques`, cri: `Destaki` } as T,
-  guide: { zh: `游览指南`, en: `Guide`, pt: `Guia`, cri: `Gia` } as T,
-  transport: { zh: `交通`, en: `Transport`, pt: `Transporte`, cri: `Transporti` } as T,
-  reviews: { zh: `评价`, en: `Reviews`, pt: `Avaliações`, cri: `Avaliason` } as T,
-  encyclopedia: { zh: `百科`, en: `Encyclopedia`, pt: `Enciclopédia`, cri: `Enciklopédia` } as T,
-  ecology: { zh: `生态`, en: `Ecology`, pt: `Ecologia`, cri: `Ekologia` } as T,
-  gallery: { zh: `图集`, en: `Gallery`, pt: `Galeria`, cri: `Galeria` } as T,
-  faq: { zh: `问答`, en: `FAQ`, pt: `Perguntas`, cri: `Purguntas` } as T,
+  overview: { zh: `前言`, en: `Preamble`, pt: `Preâmbulo`, cri: `Preâmbulu`, de: `Einleitung`, fr: `Introduction`, es: `Introducción`, it: `Introduzione` } as T,
+  highlights: { zh: `亮点`, en: `Highlights`, pt: `Destaques`, cri: `Destaki`, de: `Highlights`, fr: `Points forts`, es: `Imprescindibles`, it: `Punti salienti` } as T,
+  guide: { zh: `游览指南`, en: `Guide`, pt: `Guia`, cri: `Gia`, de: `Reiseführer`, fr: `Guide`, es: `Guía`, it: `Guida` } as T,
+  transport: { zh: `交通`, en: `Transport`, pt: `Transporte`, cri: `Transporti`, de: `Anreise`, fr: `Accès`, es: `Cómo llegar`, it: `Come arrivare` } as T,
+  reviews: { zh: `评价`, en: `Reviews`, pt: `Avaliações`, cri: `Avaliason`, de: `Bewertungen`, fr: `Avis`, es: `Reseñas`, it: `Recensioni` } as T,
+  encyclopedia: { zh: `百科`, en: `Encyclopedia`, pt: `Enciclopédia`, cri: `Enciklopédia`, de: `Lexikon`, fr: `Encyclopédie`, es: `Enciclopedia`, it: `Enciclopedia` } as T,
+  ecology: { zh: `生态`, en: `Ecology`, pt: `Ecologia`, cri: `Ekologia`, de: `Ökologie`, fr: `Écologie`, es: `Ecología`, it: `Ecologia` } as T,
+  gallery: { zh: `图集`, en: `Gallery`, pt: `Galeria`, cri: `Galeria`, de: `Galerie`, fr: `Galerie`, es: `Galería`, it: `Galleria` } as T,
+  faq: { zh: `问答`, en: `FAQ`, pt: `Perguntas`, cri: `Purguntas`, de: `FAQ`, fr: `FAQ`, es: `Preguntas`, it: `Domande frequenti` } as T,
 };
 
 // ── Hero ──
@@ -25,37 +25,53 @@ export const hero = {
     en: `The Pier of<br/><span class="italic text-[color:var(--color-sun)]">Santa Maria</span>`,
     pt: `O <span class="italic text-[color:var(--color-sun)]">Pontão</span><br/>de Santa Maria`,
     cri: `Puntan<br/><span class="italic text-[color:var(--color-sun)]">di Santa Maria</span>`,
+    de: `Der Pier von<br/><span class="italic text-[color:var(--color-sun)]">Santa Maria</span>`,
+    fr: `La jetée de<br/><span class="italic text-[color:var(--color-sun)]">Santa Maria</span>`,
+    es: `El muelle de<br/><span class="italic text-[color:var(--color-sun)]">Santa Maria</span>`,
+    it: `Il pontile di<br/><span class="italic text-[color:var(--color-sun)]">Santa Maria</span>`,
   } as T,
   subtitle: {
     zh: `圣玛丽亚栈桥 · 萨尔岛南部伸入大西洋的木质栈桥 —— 清晨的渔获拍卖、随波停泊的彩绘渔船，以及连接 Praia de Santa Maria 绝美白沙滩的起点，是体验佛得角原生态渔民文化的核心地标。`,
     en: `The Pier of Santa Maria · a timber jetty reaching into the Atlantic off southern Sal — dawn fish auctions, painted boats at their moorings, and the gateway to Praia de Santa Maria's white sand: the heart of Cape Verde's raw fishing culture.`,
     pt: `O Pontão de Santa Maria · uma ponte de madeira que se estende pelo Atlântico no sul do Sal — leilões de peixe ao amanhecer, barcos pintados nas amarrações e a porta da areia branca da Praia de Santa Maria, o coração da cultura pesqueira de Cabo Verde.`,
     cri: `Puntan di Santa Maria · un ponton di madeira na Atlántiku di Sul di Sal — vendason di piski na madrugada, barquinhu pintadu na amarason y entrada pa aria branku di Praia di Santa Maria, korason di kultura peskador di Cabo Verde.`,
+    de: `Der Pier von Santa Maria · ein Holzsteg, der vor der Südküste von Sal in den Atlantik ragt — Fischauktionen bei Tagesanbruch, festgemachte bunt bemalte Boote und das Tor zum weißen Sand der Praia de Santa Maria: das Herz der Fischerkultur von Cabo Verde.`,
+    fr: `La jetée de Santa Maria · une passerelle de bois qui s'avance dans l'Atlantique au large du sud de Sal — enchères de poisson à l'aube, barques peintes à quai et la porte du sable blanc de la Praia de Santa Maria, le cœur de la culture halieutique du Cap-Vert.`,
+    es: `El muelle de Santa Maria · una pasarela de madera que se adentra en el Atlántico frente al sur de Sal — subastas de pescado al amanecer, barcos de pesca pintados en sus amarres y la entrada a la arena blanca de la Praia de Santa Maria, el corazón de la cultura pesquera de Cabo Verde.`,
+    it: `Il pontile di Santa Maria · una passerella di legno che si protende nell'Atlantico al largo del Sal meridionale — aste del pesce all'alba, barche dipinte all'ormeggio e la porta della sabbia bianca della Praia de Santa Maria, il cuore della cultura della pesca di Capo Verde.`,
   } as T,
   viewMap: {
     zh: `在 Google 地图上查看位置`,
     en: `View location on Google Maps`,
     pt: `Ver a localização no Google Maps`,
     cri: `Bitxá local na Google Maps`,
+    de: `Standort auf Google Maps ansehen`,
+    fr: `Voir l'emplacement sur Google Maps`,
+    es: `Ver la ubicación en Google Maps`,
+    it: `Vedi la posizione su Google Maps`,
   } as T,
   alert: {
     zh: `<strong>当前状态：</strong>栈桥主体因风暴损毁，正封闭重建中（预计 2027 年完工）。Praia de Santa Maria 海滩及沙滩临时渔市正常开放。`,
     en: `<strong>Status:</strong> The pier is fenced off for reconstruction after storm damage (expected completion: 2027). Praia de Santa Maria beach and the temporary fish stalls on the sand remain open.`,
     pt: `<strong>Estado:</strong> O pontão está vedado para reconstrução após danos da tempestade (conclusão prevista: 2027). A Praia de Santa Maria e o mercado provisório na areia continuam abertos.`,
     cri: `<strong>Stadu:</strong> Puntan sta ku vedason pa rekonstruson dipôs di danu di tempestadi (previson: 2027). Praia di Santa Maria y merkadu provizóriu na areia inda sta abértu.`,
+    de: `<strong>Status:</strong> Die Pier ist nach Sturmschäden für den Wiederaufbau abgesperrt (Fertigstellung voraussichtlich 2027). Der Strand der Praia de Santa Maria und die temporären Fischstände im Sand bleiben geöffnet.`,
+    fr: `<strong>Statut :</strong> La jetée est clôturée pour reconstruction après une tempête (achèvement prévu en 2027). La plage de la Praia de Santa Maria et les étals de poisson temporaires sur le sable restent ouverts.`,
+    es: `<strong>Estado:</strong> El muelle está vallado por reconstrucción tras daños por tormenta (finalización prevista en 2027). La playa de la Praia de Santa Maria y los puestos de pescado temporales en la arena permanecen abiertos.`,
+    it: `<strong>Stato:</strong> Il pontile è transennato per la ricostruzione dopo i danni di una tempesta (completamento previsto nel 2027). La spiaggia della Praia de Santa Maria e i banchi di pesce temporanei sulla sabbia restano aperti.`,
   } as T,
-  statLength: { zh: `评分`, en: `Rating`, pt: `Avaliação`, cri: `Avaliasan` } as T,
-  statReviews: { zh: `评价`, en: `reviews`, pt: `avaliações`, cri: `avaliason` } as T,
-  statFalls: { zh: `类型`, en: `Type`, pt: `Tipo`, cri: `Tipu` } as T,
-  statFlow: { zh: `所在地`, en: `Location`, pt: `Local`, cri: `Lugar` } as T,
+  statLength: { zh: `评分`, en: `Rating`, pt: `Avaliação`, cri: `Avaliasan`, de: `Bewertung`, fr: `Note`, es: `Valoración`, it: `Valutazione` } as T,
+  statReviews: { zh: `评价`, en: `reviews`, pt: `avaliações`, cri: `avaliason`, de: `Bewertungen`, fr: `avis`, es: `reseñas`, it: `recensioni` } as T,
+  statFalls: { zh: `类型`, en: `Type`, pt: `Tipo`, cri: `Tipu`, de: `Typ`, fr: `Type`, es: `Tipo`, it: `Tipo` } as T,
+  statFlow: { zh: `所在地`, en: `Location`, pt: `Local`, cri: `Lugar`, de: `Ort`, fr: `Lieu`, es: `Ubicación`, it: `Posizione` } as T,
   ratingVal: { zh: `4.5`, en: `4.5`, pt: `4.5`, cri: `4.5` } as T,
-  reviewsVal: { zh: `7,420`, en: `7,420`, pt: `7.420`, cri: `7.420` } as T,
-  categoryVal: { zh: `旅游胜地`, en: `Tourist attraction`, pt: `Atração turística`, cri: `Atrazon turístiku` } as T,
-  statusVal: { zh: `暂停营业`, en: `Temporarily closed`, pt: `Temporariamente encerrado`, cri: `Tampam provizóriu` } as T,
-  chip1: { zh: `渔获拍卖`, en: `Fish auction`, pt: `Leilão do peixe`, cri: `Vendason di piski` } as T,
-  chip2: { zh: `渔民文化`, en: `Fishing culture`, pt: `Cultura pesqueira`, cri: `Kultura peskador` } as T,
-  chip3: { zh: `白沙海滩`, en: `White-sand beach`, pt: `Praia de areia branca`, cri: `Praia di aria branku` } as T,
-  chip4: { zh: `旅游胜地`, en: `Tourist attraction`, pt: `Atração turística`, cri: `Atrazon turístiku` } as T,
+  reviewsVal: { zh: `7,420`, en: `7,420`, pt: `7.420`, cri: `7.420`, de: `7.420`, fr: `7 420`, es: `7.420`, it: `7.420` } as T,
+  categoryVal: { zh: `旅游胜地`, en: `Tourist attraction`, pt: `Atração turística`, cri: `Atrazon turístiku`, de: `Touristenattraktion`, fr: `Attraction touristique`, es: `Atracción turística`, it: `Attrazione turistica` } as T,
+  statusVal: { zh: `暂停营业`, en: `Temporarily closed`, pt: `Temporariamente encerrado`, cri: `Tampam provizóriu`, de: `Vorübergehend geschlossen`, fr: `Temporairement fermé`, es: `Temporalmente cerrado`, it: `Temporaneamente chiuso` } as T,
+  chip1: { zh: `渔获拍卖`, en: `Fish auction`, pt: `Leilão do peixe`, cri: `Vendason di piski`, de: `Fischauktion`, fr: `Enchères de poisson`, es: `Subasta de pescado`, it: `Asta del pesce` } as T,
+  chip2: { zh: `渔民文化`, en: `Fishing culture`, pt: `Cultura pesqueira`, cri: `Kultura peskador`, de: `Fischerkultur`, fr: `Culture halieutique`, es: `Cultura pesquera`, it: `Cultura della pesca` } as T,
+  chip3: { zh: `白沙海滩`, en: `White-sand beach`, pt: `Praia de areia branca`, cri: `Praia di aria branku`, de: `Weißer Sandstrand`, fr: `Plage de sable blanc`, es: `Playa de arena blanca`, it: `Spiaggia di sabbia bianca` } as T,
+  chip4: { zh: `旅游胜地`, en: `Tourist attraction`, pt: `Atração turística`, cri: `Atrazon turístiku`, de: `Touristenattraktion`, fr: `Attraction touristique`, es: `Atracción turística`, it: `Attrazione turistica` } as T,
 };
 
 // ── Manifesto (网站前言) ──
@@ -139,10 +155,10 @@ export const rebuild = {
     cri: `Puntan sta na rekonstruson<br/><em class="text-[color:var(--color-sun)]">nós ta sigi progreso</em>`,
   } as T,
   lede: {
-    zh: `Google 地图显示“暂停营业”并非整片海滩关闭：封闭的是木质栈桥主体（<em>Pontão de Santa Maria</em>），沙滩与近海仍开放。`,
-    en: `“Temporarily closed” on Google Maps does not mean the whole beach is closed: the fenced-off area is the timber jetty itself (<em>Pontão de Santa Maria</em>). The beach and nearshore remain open.`,
-    pt: `“Temporariamente encerrado” no Google Maps não significa que toda a praia esteja fechada: a área vedada é o próprio pontão de madeira (<em>Pontão de Santa Maria</em>). A praia e o mar raso continuam abertos.`,
-    cri: `“Tampam provizóriu” na Google Maps ka ta fla ki praia tudu fechadu: área ku vedason é propiu ponton di madeira (<em>Puntan di Santa Maria</em>). Praia y mar ribeira inda sta abértu.`,
+    zh: `Google 地图显示"暂停营业"并非整片海滩关闭：封闭的是木质栈桥主体（<em>Pontão de Santa Maria</em>），沙滩与近海仍开放。`,
+    en: `"Temporarily closed" on Google Maps does not mean the whole beach is closed: the fenced-off area is the timber jetty itself (<em>Pontão de Santa Maria</em>). The beach and nearshore remain open.`,
+    pt: `"Temporariamente encerrado" no Google Maps não significa que toda a praia esteja fechada: a área vedada é o próprio pontão de madeira (<em>Pontão de Santa Maria</em>). A praia e o mar raso continuam abertos.`,
+    cri: `"Tampam provizóriu" na Google Maps ka ta fla ki praia tudu fechadu: área ku vedason é propiu ponton di madeira (<em>Puntan di Santa Maria</em>). Praia y mar ribeira inda sta abértu.`,
   } as T,
   blocks: [
     {
@@ -159,20 +175,20 @@ export const rebuild = {
       kicker: { zh: `2025 年 9 月—2027 年上半年`, en: `Sep 2025—H1 2027`, pt: `Set. 2025—1.º sem. 2027`, cri: `Set. 2025—priméru semestri 2027` } as T,
       title: { zh: `890 万欧元 · 18 个月工期`, en: `€8.9M · 18-month schedule`, pt: `8,9 M€ · 18 meses`, cri: `8,9 M€ · 18 mez` } as T,
       body: {
-        zh: `2025 年 9 月政府敲定重建合同，预算约 890 万欧元，工期 18 个月，预计到 2027 年上半年完工。施工期间全程围挡，游客无法走上栈桥。<br/><br/>Google 地图依据现场管制与官方信息，将景点条目标注为 “暂停营业（Temporarily Closed）”。`,
-        en: `In Sep 2025, the government finalised a reconstruction contract with a budget of about €8.9 million and an 18-month schedule, aiming for completion in the first half of 2027. The site remains fenced during works, and visitors cannot walk onto the pier.<br/><br/>Based on official controls and on-site restrictions, Google Maps marks the attraction as “Temporarily Closed”.`,
-        pt: `Em setembro de 2025, o governo fechou o contrato de reconstrução, com orçamento de cerca de 8,9 milhões de euros e prazo de 18 meses, com previsão de conclusão no primeiro semestre de 2027. Durante as obras, o local permanece vedado e não é possível caminhar sobre o pontão.<br/><br/>Com base no controlo oficial e nas restrições no terreno, o Google Maps assinala a atração como “Temporariamente encerrado”.`,
-        cri: `Na Setenbru 2025, govérnu fecha kontratu di rekonstruson, ku orzamentu di mas o ménus 8,9 milhon di euro y prazu di 18 mez, ku previsão di termina na priméru semestri di 2027. Durante obra, lugal ta fika ku vedason y turista ka podi subi na ponton.<br/><br/>Pamodi kontrolu ofisial y restrison na teren, Google Maps ta marca atrason komu “Tampam provizóriu”.`,
+        zh: `2025 年 9 月政府敲定重建合同，预算约 890 万欧元，工期 18 个月，预计到 2027 年上半年完工。施工期间全程围挡，游客无法走上栈桥。<br/><br/>Google 地图依据现场管制与官方信息，将景点条目标注为 "暂停营业（Temporarily Closed）"。`,
+        en: `In Sep 2025, the government finalised a reconstruction contract with a budget of about €8.9 million and an 18-month schedule, aiming for completion in the first half of 2027. The site remains fenced during works, and visitors cannot walk onto the pier.<br/><br/>Based on official controls and on-site restrictions, Google Maps marks the attraction as "Temporarily Closed".`,
+        pt: `Em setembro de 2025, o governo fechou o contrato de reconstrução, com orçamento de cerca de 8,9 milhões de euros e prazo de 18 meses, com previsão de conclusão no primeiro semestre de 2027. Durante as obras, o local permanece vedado e não é possível caminhar sobre o pontão.<br/><br/>Com base no controlo oficial e nas restrições no terreno, o Google Maps assinala a atração como "Temporariamente encerrado".`,
+        cri: `Na Setenbru 2025, govérnu fecha kontratu di rekonstruson, ku orzamentu di mas o ménus 8,9 milhon di euro y prazu di 18 mez, ku previsão di termina na priméru semestri di 2027. Durante obra, lugal ta fika ku vedason y turista ka podi subi na ponton.<br/><br/>Pamodi kontrolu ofisial y restrison na teren, Google Maps ta marca atrason komu "Tampam provizóriu".`,
       } as T,
     },
     {
       kicker: { zh: `地图标注逻辑`, en: `How the map label works`, pt: `Como funciona a marcação`, cri: `Kuma marcaçon ta funsiona` } as T,
       title: { zh: `栈桥景点 ≠ 海滩`, en: `Pier ≠ the whole beach`, pt: `Pontão ≠ praia inteira`, cri: `Puntan ≠ praia tudu` } as T,
       body: {
-        zh: `Google 地图把栈桥码头本身作为独立景点（The Pier of Santa Maria）列出；海滩（Praia de Santa Maria）依旧开放，没有停业标记。<br/><br/>许多游客会把“海边沙滩”和“栈桥景点”混为一谈，从而误以为整片海关闭。实际情况是：<strong>沙滩可正常游玩，栈桥区域因危险与施工禁止进入</strong>。`,
-        en: `On Google Maps, the pier itself is listed as a standalone attraction (“The Pier of Santa Maria”). The beach (“Praia de Santa Maria”) remains open and is not marked as closed.<br/><br/>Many travellers confuse “the beach” with “the pier attraction” and assume the whole coastline is shut. In reality: <strong>the beach is open; only the pier area is off-limits due to danger and construction</strong>.`,
-        pt: `No Google Maps, o próprio pontão aparece como atração separada (“The Pier of Santa Maria”). A praia (“Praia de Santa Maria”) continua aberta e não está marcada como fechada.<br/><br/>Muitos visitantes confundem “praia” com “pontão” e pensam que toda a orla está encerrada. Na prática: <strong>a praia está aberta; apenas a área do pontão é proibida por segurança e obras</strong>.`,
-        cri: `Na Google Maps, propiu puntan ta aparési komu atrason separadu (“The Pier of Santa Maria”). Praia (“Praia de Santa Maria”) inda sta abértu y ka ten marka di fechadu.<br/><br/>Txeu viajanti ta misturá “praia” ku “ponton” y pensa ki kosta tudu fechadu. Ma na verdadi: <strong>praia sta abértu; só área di puntan é proibidu pamodi perigu y obra</strong>.`,
+        zh: `Google 地图把栈桥码头本身作为独立景点（The Pier of Santa Maria）列出；海滩（Praia de Santa Maria）依旧开放，没有停业标记。<br/><br/>许多游客会把"海边沙滩"和"栈桥景点"混为一谈，从而误以为整片海关闭。实际情况是：<strong>沙滩可正常游玩，栈桥区域因危险与施工禁止进入</strong>。`,
+        en: `On Google Maps, the pier itself is listed as a standalone attraction ("The Pier of Santa Maria"). The beach ("Praia de Santa Maria") remains open and is not marked as closed.<br/><br/>Many travellers confuse "the beach" with "the pier attraction" and assume the whole coastline is shut. In reality: <strong>the beach is open; only the pier area is off-limits due to danger and construction</strong>.`,
+        pt: `No Google Maps, o próprio pontão aparece como atração separada ("The Pier of Santa Maria"). A praia ("Praia de Santa Maria") continua aberta e não está marcada como fechada.<br/><br/>Muitos visitantes confundem "praia" com "pontão" e pensam que toda a orla está encerrada. Na prática: <strong>a praia está aberta; apenas a área do pontão é proibida por segurança e obras</strong>.`,
+        cri: `Na Google Maps, propiu puntan ta aparési komu atrason separadu ("The Pier of Santa Maria"). Praia ("Praia de Santa Maria") inda sta abértu y ka ten marka di fechadu.<br/><br/>Txeu viajanti ta misturá "praia" ku "ponton" y pensa ki kosta tudu fechadu. Ma na verdadi: <strong>praia sta abértu; só área di puntan é proibidu pamodi perigu y obra</strong>.`,
       } as T,
     },
   ],
@@ -187,7 +203,7 @@ export const rebuild = {
     {
       label: { zh: `Governo de Cabo Verde · 2025-09-16`, en: `Governo de Cabo Verde · 2025-09-16`, pt: `Governo de Cabo Verde · 2025-09-16`, cri: `Govérnu di Cabo Verde · 2025-09-16` } as T,
       url: 'https://www.governo.cv/pontao-de-santa-maria-e-mais-do-que-um-projeto-de-infraestrutura-e-um-simbolo-do-sal-da-sua-historia-e-da-identidade-de-cabo-verde-pm/',
-      note: { zh: `包含 “8,9 milhões de euros / 18 meses” 等关键信息。`, en: `Includes key figures such as “€8.9M / 18 months”.`, pt: `Inclui valores-chave como “8,9 M€ / 18 meses”.`, cri: `Ten valor prinsipal sima “8,9 M€ / 18 mez”.` } as T,
+      note: { zh: `包含 "8,9 milhões de euros / 18 meses" 等关键信息。`, en: `Includes key figures such as "€8.9M / 18 months".`, pt: `Inclui valores-chave como "8,9 M€ / 18 meses".`, cri: `Ten valor prinsipal sima "8,9 M€ / 18 mez".` } as T,
     },
     {
       label: { zh: `UGPE (Governo de Cabo Verde) · 2025-09`, en: `UGPE (Governo de Cabo Verde) · 2025-09`, pt: `UGPE (Governo de Cabo Verde) · 2025-09`, cri: `UGPE (Govérnu di Cabo Verde) · 2025-09` } as T,
@@ -202,7 +218,7 @@ export const practical = {
   sectionNum: { zh: `实用游览指南`, en: `Practical Guide`, pt: `Guia prático`, cri: `Gia prátiku` } as T,
   heading: { zh: `出发前<em class="text-[color:var(--color-emerald)]">必读</em>`, en: `Read this<br/><em class="text-[color:var(--color-emerald)]">before you go</em>.`, pt: `Leia<br/><em class="text-[color:var(--color-emerald)]">antes de ir</em>.`, cri: `Lê<br/><em class="text-[color:var(--color-emerald)]">antis di bai</em>.` } as T,
   cards: [
-    { icon: '🕒', label: { zh: `当前状态`, en: `Status`, pt: `Estado`, cri: `Stadu` } as T, value: { zh: `暂停营业`, en: `Temporarily closed`, pt: `Temporariamente encerrado`, cri: `Tampam provizóriu` } as T, desc: { zh: `2024 年 10 月热带风暴巨浪导致栈桥木结构大面积损毁，现围挡封闭重建，因此在 Google 地图上标注为“暂停营业”。<strong>海滩本身仍开放</strong>。`, en: `In Oct 2024, tropical-storm swell severely damaged the wooden structure. The pier is now fenced off for reconstruction, so Google Maps marks it as “temporarily closed”. <strong>The beach itself remains open</strong>.`, pt: `Em outubro de 2024, a ondulação de uma tempestade tropical causou danos extensos na estrutura de madeira. O pontão está vedado para reconstrução e por isso o Google Maps o marca como “temporariamente encerrado”. <strong>A praia continua aberta</strong>.`, cri: `Na Outubru 2024, ondason di tempestadi tropikál danifika txeu struktur di madeira. Puntan sta ku vedason pa rekonstruson, y pamodi es, Google Maps ta marca-l komu “tampam provizóriu”. <strong>Praia inda sta abértu</strong>.` } as T },
+    { icon: '🕒', label: { zh: `当前状态`, en: `Status`, pt: `Estado`, cri: `Stadu` } as T, value: { zh: `暂停营业`, en: `Temporarily closed`, pt: `Temporariamente encerrado`, cri: `Tampam provizóriu` } as T, desc: { zh: `2024 年 10 月热带风暴巨浪导致栈桥木结构大面积损毁，现围挡封闭重建，因此在 Google 地图上标注为"暂停营业"。<strong>海滩本身仍开放</strong>。`, en: `In Oct 2024, tropical-storm swell severely damaged the wooden structure. The pier is now fenced off for reconstruction, so Google Maps marks it as "temporarily closed". <strong>The beach itself remains open</strong>.`, pt: `Em outubro de 2024, a ondulação de uma tempestade tropical causou danos extensos na estrutura de madeira. O pontão está vedado para reconstrução e por isso o Google Maps o marca como "temporariamente encerrado". <strong>A praia continua aberta</strong>.`, cri: `Na Outubru 2024, ondason di tempestadi tropikál danifika txeu struktur di madeira. Puntan sta ku vedason pa rekonstruson, y pamodi es, Google Maps ta marca-l komu "tampam provizóriu". <strong>Praia inda sta abértu</strong>.` } as T },
     { icon: '🎟️', label: { zh: `门票与入口`, en: `Ticket & entry`, pt: `Ingresso`, cri: `Bilheti` } as T, value: { zh: `海滩开放`, en: `Beach open`, pt: `Praia aberta`, cri: `Praia abértu` } as T, desc: { zh: `沙滩与步道无需门票，可正常通行；但栈桥区域围栏封闭，禁止进入或翻越。`, en: `The beach and promenade are free and open; the pier area is fenced off and entry is prohibited.`, pt: `A praia e a avenida marginal são gratuitas e abertas; a área do pontão está vedada e o acesso é proibido.`, cri: `Praia y marginal é grátis y abértu; área di puntan sta ku vedason y entrada é proibidu.` } as T },
     { icon: '⏱️', label: { zh: `游览时长`, en: `Duration`, pt: `Duração`, cri: `Durasan` } as T, value: '30 min–2 h', desc: { zh: `只看渔获拍卖约 30 分钟；加上散步、看船、拍照与等一场日落，可轻松逗留 1–2 小时。`, en: `The auction alone: ~30 min. Add a stroll, the boats, photos and a sunset and you can linger 1–2 h.`, pt: `Só o leilão: ~30 min. Com passeio, barcos, fotos e um pôr do sol, dá para ficar 1–2 h.`, cri: `Só vendason: ~30 min. Kun paseiu, barquinhu, foto y un pôr di sol, bu fika 1–2 h.` } as T },
     { icon: '⚠️', label: { zh: `重要贴士`, en: `Key tips`, pt: `Dicas`, cri: `Dika` } as T, value: '', desc: '', tips: [{ zh: `清晨是渔获拍卖的唯一时段，想看热闹请赶早（约 05:00–08:00）`, en: `The fish auction happens only at dawn — come early (≈05:00–08:00) for the action`, pt: `O leilão do peixe só acontece de madrugada — venha cedo (≈05:00–08:00) para ver`, cri: `Vendason di piski só na madrugada — txiga sedu (≈05:00–08:00)` } as T, { zh: `栈桥木板湿滑、有缝隙，请注意脚下，勿翻越护栏或靠近作业区`, en: `Planks are wet and gapped — watch your step, don't climb rails or enter the work zone`, pt: `As tábuas são molhadas e com frestas — cuidado com o passo, não suba nas grades nem entre na zona de trabalho`, cri: `Táboa molhadu y ku fresta — kuidadu ku pásu, nha sobi grades ni entra na zona di trabadju` } as T, { zh: `岛上日照极强、无遮荫，请带足饮水与防晒`, en: `Intense sun and no shade — bring plenty of water and sun protection`, pt: `Sol forte e sem sombra — leve água e proteção solar`, cri: `Sol forti y nha ten sombra — leva agua y protesons di sol` } as T] },
@@ -308,10 +324,10 @@ export const reviews = {
   heading: { zh: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · 真实的旅人印记`, en: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · Notes from real travellers`, pt: `4.5<span class="text-[color:var(--color-emerald)]">/5</span> · Registos de viajantes reais` } as T,
   viewMoreReviews: { zh: `在 Google 地图上查看更多评价`, en: `View more reviews on Google Maps`, pt: `Ver mais avaliações no Google Maps`, cri: `Odja más avaliason na Google Maps` } as T,
   items: [
-    { stars: '★★★★★', date: '2025-11', title: { zh: `"哪怕在重建，渔市依然鲜活"`, en: `"Even in rebuild, the fish market lives"`, pt: `"Mesmo em obras, o peixe está vivo"` } as T, desc: { zh: `“虽然木栈桥因为维修被围栏挡住了上不去，但渔民们把交易搬到了旁边的沙滩上。清晨 6 点的沙滩渔市极其震撼，金枪鱼在晨光下闪闪发亮，这就是最真实的佛得角。”`, en: `"The timber pier is fenced off so you can't walk out, but the trade moved to the sand beside it. At 6 a.m. the beach fish market is intense — tuna shining in the first light. This is Cape Verde at its most real."`, pt: `"O pontão está vedado e não dá para caminhar, mas a venda mudou para a areia ao lado. Às 6h o mercado na praia é impressionante — atuns a brilhar na primeira luz. Cabo Verde no seu estado mais real."` } as T, author: 'David L. · 🇬🇧' },
-    { stars: '★★★★★', date: '2026-02', title: { zh: `"离酒店咫尺之遥的落日"`, en: `"Sunset just steps from the hotel"`, pt: `"Pôr do sol a poucos passos"` } as T, desc: { zh: `“住在镇上，每天傍晚都会走到栈桥边看日落。看着彩绘渔船在晚霞中随着海浪摇曳，吹着大西洋的风，非常治愈。”`, en: `"Staying in town, we walked here every evening for the sunset. Painted boats rocking in the glow, Atlantic wind in your face — strangely healing."`, pt: `"Ficando na vila, viemos aqui todas as tardes para o pôr do sol. Barcos pintados a balançar na luz, vento do Atlântico — muito terapêutico."` } as T, author: 'Emma S. · 🇦🇺' },
-    { stars: '★★★★<span class="text-black/20">★</span>', date: '2025-08', title: { zh: `"摄影爱好者的天堂"`, en: `"A paradise for photographers"`, pt: `"Paraíso para fotógrafos"` } as T, desc: { zh: `“一定要早起！渔妇们头顶鱼筐走过沙滩的画面太有张力了。不过记得拍照前要微笑示意，尊重当地人的劳动。”`, en: `"Come early. The peixeiras (fishwives) crossing the sand with baskets on their heads is pure drama. Just ask with a smile before taking close-up photos — respect their work."`, pt: `"Acorde cedo. As peixeiras com cestos na cabeça na areia rendem fotos incríveis. Mas sorria e peça permissão antes de fotografar de perto — respeito pelo trabalho."` } as T, author: 'Chen Y. · 🇨🇳' },
-    { stars: '★★★★★', date: '2026-05', title: { zh: `"期待它重新开放的那天"`, en: `"Waiting for the day it reopens"`, pt: `"À espera do dia da reabertura"` } as T, desc: { zh: `“施工围挡上写着 2027 年完工。虽然这次没能走上长长的木栈道尽头，但在浅滩边看到了游动的鳐鱼，依然是不虚此行。”`, en: `"The fence says completion in 2027. I couldn't walk to the end of the long jetty this time, but I still saw stingrays gliding over the shallows — worth it."`, pt: `"A vedação fala em conclusão em 2027. Não deu para caminhar até ao fim, mas vi raias a deslizar no raso — valeu a pena."` } as T, author: 'Carlos M. · 🇪🇸' },
+    { stars: '★★★★★', date: '2025-11', title: { zh: `"哪怕在重建，渔市依然鲜活"`, en: `"Even in rebuild, the fish market lives"`, pt: `"Mesmo em obras, o peixe está vivo"` } as T, desc: { zh: `"虽然木栈桥因为维修被围栏挡住了上不去，但渔民们把交易搬到了旁边的沙滩上。清晨 6 点的沙滩渔市极其震撼，金枪鱼在晨光下闪闪发亮，这就是最真实的佛得角。"`, en: `"The timber pier is fenced off so you can't walk out, but the trade moved to the sand beside it. At 6 a.m. the beach fish market is intense — tuna shining in the first light. This is Cape Verde at its most real."`, pt: `"O pontão está vedado e não dá para caminhar, mas a venda mudou para a areia ao lado. Às 6h o mercado na praia é impressionante — atuns a brilhar na primeira luz. Cabo Verde no seu estado mais real."` } as T, author: 'David L. · 🇬🇧' },
+    { stars: '★★★★★', date: '2026-02', title: { zh: `"离酒店咫尺之遥的落日"`, en: `"Sunset just steps from the hotel"`, pt: `"Pôr do sol a poucos passos"` } as T, desc: { zh: `"住在镇上，每天傍晚都会走到栈桥边看日落。看着彩绘渔船在晚霞中随着海浪摇曳，吹着大西洋的风，非常治愈。"`, en: `"Staying in town, we walked here every evening for the sunset. Painted boats rocking in the glow, Atlantic wind in your face — strangely healing."`, pt: `"Ficando na vila, viemos aqui todas as tardes para o pôr do sol. Barcos pintados a balançar na luz, vento do Atlântico — muito terapêutico."` } as T, author: 'Emma S. · 🇦🇺' },
+    { stars: '★★★★<span class="text-black/20">★</span>', date: '2025-08', title: { zh: `"摄影爱好者的天堂"`, en: `"A paradise for photographers"`, pt: `"Paraíso para fotógrafos"` } as T, desc: { zh: `"一定要早起！渔妇们头顶鱼筐走过沙滩的画面太有张力了。不过记得拍照前要微笑示意，尊重当地人的劳动。"`, en: `"Come early. The peixeiras (fishwives) crossing the sand with baskets on their heads is pure drama. Just ask with a smile before taking close-up photos — respect their work."`, pt: `"Acorde cedo. As peixeiras com cestos na cabeça na areia rendem fotos incríveis. Mas sorria e peça permissão antes de fotografar de perto — respeito pelo trabalho."` } as T, author: 'Chen Y. · 🇨🇳' },
+    { stars: '★★★★★', date: '2026-05', title: { zh: `"期待它重新开放的那天"`, en: `"Waiting for the day it reopens"`, pt: `"À espera do dia da reabertura"` } as T, desc: { zh: `"施工围挡上写着 2027 年完工。虽然这次没能走上长长的木栈道尽头，但在浅滩边看到了游动的鳐鱼，依然是不虚此行。"`, en: `"The fence says completion in 2027. I couldn't walk to the end of the long jetty this time, but I still saw stingrays gliding over the shallows — worth it."`, pt: `"A vedação fala em conclusão em 2027. Não deu para caminhar até ao fim, mas vi raias a deslizar no raso — valeu a pena."` } as T, author: 'Carlos M. · 🇪🇸' },
   ],
 };
 
@@ -384,44 +400,64 @@ export const ecology = {
 
 // ── FAQ (官方访客指南与常见问题) ──
 export const faq = {
-  sectionNum: { zh: `官方访客指南`, en: `Official Visitor Guide`, pt: `Guia Oficial do Visitante` } as T,
-  heading: { zh: `访客指南与<em class="text-[color:var(--color-emerald)]">常见问题</em>`, en: `Visitor Guide &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, pt: `Guia do visitante &<em class="text-[color:var(--color-emerald)]"> perguntas frequentes</em>` } as T,
+  sectionNum: { zh: `官方访客指南`, en: `Official Visitor Guide`, pt: `Guia Oficial do Visitante`, de: `Offizieller Besucherführer`, fr: `Guide officiel du visiteur`, es: `Guía oficial del visitante`, it: `Guida ufficiale del visitatore` } as T,
+  heading: { zh: `访客指南与<em class="text-[color:var(--color-emerald)]">常见问题</em>`, en: `Visitor Guide &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, pt: `Guia do visitante &<em class="text-[color:var(--color-emerald)]"> perguntas frequentes</em>`, de: `Besucherführer &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, fr: `Guide du visiteur &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, es: `Guía del visitante &<em class="text-[color:var(--color-emerald)]"> FAQ</em>`, it: `Guida del visitante &<em class="text-[color:var(--color-emerald)]"> FAQ</em>` } as T,
   disclaimer: {
     zh: `以下信息由本独立科普团队根据当地实况整理，仅供访客参考。出行前请通过佛得角官方渠道核实最新政策与施工通告。`,
     en: `The following information is compiled by an independent editorial team based on on-site observations, for visitor reference only. Please verify the latest policies and construction notices through official Cape Verde channels before travelling.`,
     pt: `As informações a seguir foram compiladas por uma equipa editorial independente com base em observação no local, apenas para referência. Verifique as políticas e avisos de obras mais recentes pelos canais oficiais de Cabo Verde antes de viajar.`,
+    de: `Die folgenden Informationen wurden von einem unabhängigen Redaktionsteam auf Basis von Vor-Ort-Beobachtungen zusammengestellt und dienen nur der Orientierung. Bitte prüfen Sie die aktuellen Regelungen und Bauhinweise über offizielle Kanäle von Cabo Verde, bevor Sie reisen.`,
+    fr: `Les informations suivantes sont compilées par une équipe éditoriale indépendante à partir d'observations sur place, à titre indicatif uniquement. Veuillez vérifier les dernières politiques et avis de chantier via les canaux officiels du Cap-Vert avant de voyager.`,
+    es: `La siguiente información ha sido recopilada por un equipo editorial independiente a partir de observaciones in situ, solo como referencia para el visitante. Verifique las políticas y avisos de obra más recientes a través de los canales oficiales de Cabo Verde antes de viajar.`,
+    it: `Le seguenti informazioni sono raccolte da un team editoriale indipendente sulla base di osservazioni in loco, solo a scopo di riferimento per i visitatori. Verificate le politiche e gli avvisi di cantiere più recenti tramite i canali ufficiali di Capo Verde prima di partire.`,
   } as T,
   items: [
     {
-      q: { zh: `参观栈桥和沙滩需要门票吗？`, en: `Do I need a ticket to visit the pier and beach?`, pt: `Preciso de bilhete para visitar o pontão e a praia?` } as T,
+      q: { zh: `参观栈桥和沙滩需要门票吗？`, en: `Do I need a ticket to visit the pier and beach?`, pt: `Preciso de bilhete para visitar o pontão e a praia?`, de: `Brauche ich ein Ticket für Pier und Strand?`, fr: `Ai-je besoin d'un billet pour visiter la jetée et la plage ?`, es: `¿Necesito entrada para visitar el muelle y la playa?`, it: `Serve un biglietto per visitare il pontile e la spiaggia?` } as T,
       a: {
         zh: `完全免费。无论是圣玛丽亚沙滩（Praia de Santa Maria）还是渔市，都是开放的公共区域，无需购买任何门票。`,
         en: `Completely free. Both Praia de Santa Maria and the fish market area are public spaces — no ticket is required.`,
         pt: `Totalmente gratuito. Tanto a Praia de Santa Maria como a zona do mercado do peixe são espaços públicos — não precisa de bilhete.`,
+        de: `Völlig kostenlos. Sowohl die Praia de Santa Maria als auch das Fischmarktgelände sind öffentliche Räume — es ist kein Ticket nötig.`,
+        fr: `Entièrement gratuit. La Praia de Santa Maria et la zone du marché aux poissons sont des espaces publics — aucun billet n'est requis.`,
+        es: `Totalmente gratis. Tanto la Praia de Santa Maria como la zona del mercado del pescado son espacios públicos — no se necesita entrada.`,
+        it: `Completamente gratuito. Sia la Praia de Santa Maria sia l'area del mercato del pesce sono spazi pubblici — non è richiesto alcun biglietto.`,
       } as T,
     },
     {
-      q: { zh: `栈桥封闭了，我还能看到渔获拍卖吗？`, en: `If the pier is closed, can I still see the fish auction?`, pt: `Com o pontão fechado, ainda dá para ver o leilão do peixe?` } as T,
+      q: { zh: `栈桥封闭了，我还能看到渔获拍卖吗？`, en: `If the pier is closed, can I still see the fish auction?`, pt: `Com o pontão fechado, ainda dá para ver o leilão do peixe?`, de: `Wenn die Pier geschlossen ist, kann ich die Fischauktion noch sehen?`, fr: `Si la jetée est fermée, puis-je encore voir l'enchère de poisson ?`, es: `Si el muelle está cerrado, ¿puedo ver igualmente la subasta de pescado?`, it: `Se il pontile è chiuso, posso comunque vedere l'asta del pesce?` } as T,
       a: {
         zh: `可以！虽然无法走上木质栈道，但渔民们已将卸货和交易地点临时转移到栈桥根部的沙滩和旁边的遮阳棚下。每天清晨的渔获拍卖通常仍会进行。`,
-        en: `Yes. While you cannot walk onto the timber jetty, unloading and trading have temporarily shifted to the sand at the pier’s base and nearby shade structures. The dawn auction usually still happens.`,
+        en: `Yes. While you cannot walk onto the timber jetty, unloading and trading have temporarily shifted to the sand at the pier's base and nearby shade structures. The dawn auction usually still happens.`,
         pt: `Sim. Embora não seja possível caminhar sobre o pontão, a descarga e a venda foram transferidas provisoriamente para a areia junto à base e para estruturas de sombra próximas. O leilão ao amanhecer geralmente continua.`,
+        de: `Ja. Auch wenn man die hölzerne Pier nicht betreten kann, wurden Entladung und Handel vorübergehend an den Sand am Fuß der Pier und in nahegelegene Schattenstrukturen verlegt. Die morgendliche Auktion findet meist weiterhin statt.`,
+        fr: `Oui. Même si vous ne pouvez pas marcher sur la jetée en bois, le déchargement et le commerce ont été temporairement déplacés sur le sable au pied de la jetée et sous des structures ombragées à proximité. L'enchère à l'aube a généralement toujours lieu.`,
+        es: `Sí. Aunque no pueda caminar sobre la pasarela de madera, la descarga y la venta se han trasladado temporalmente a la arena junto a la base del muelle y a estructuras de sombra cercanas. La subasta al amanecer suele seguir ocurriendo.`,
+        it: `Sì. Anche se non puoi camminare sulla passerella di legno, lo scarico e la vendita si sono spostati temporaneamente sulla sabbia alla base del pontile e in vicine strutture ombreggiate. L'asta all'alba di solito avviene ancora.`,
       } as T,
     },
     {
-      q: { zh: `什么时候是最佳到访时间？`, en: `When is the best time to visit?`, pt: `Qual o melhor horário para visitar?` } as T,
+      q: { zh: `什么时候是最佳到访时间？`, en: `When is the best time to visit?`, pt: `Qual o melhor horário para visitar?`, de: `Wann ist die beste Besuchszeit?`, fr: `Quel est le meilleur moment pour visiter ?`, es: `¿Cuál es el mejor horario para visitar?`, it: `Qual è il momento migliore per visitare?` } as T,
       a: {
         zh: `<strong>感受人文：</strong>早上 06:00 – 08:30。这是渔船归航、渔市交易最鼎盛的时段。<br/><br/><strong>欣赏风光：</strong>傍晚 17:30 之后。适合在沙滩边散步，看夕阳染红大西洋和停泊的彩绘渔船。`,
         en: `<strong>For culture:</strong> 06:00–08:30, when boats return and the fish trade peaks.<br/><br/><strong>For scenery:</strong> after 17:30, for an easy beach walk and the Atlantic sunset over painted boats.`,
         pt: `<strong>Para a vida local:</strong> 06:00–08:30, quando os barcos regressam e o comércio do peixe atinge o auge.<br/><br/><strong>Para a paisagem:</strong> depois das 17:30, para caminhar na praia e ver o pôr do sol sobre os barcos pintados.`,
+        de: `<strong>Für Kultur:</strong> 06:00–08:30, wenn die Boote zurückkehren und der Fischhandel seinen Höhepunkt erreicht.<br/><br/><strong>Für Landschaft:</strong> nach 17:30, für einen entspannten Strandspaziergang und den Atlantik-Sonnenuntergang über den bemalten Booten.`,
+        fr: `<strong>Pour la culture :</strong> 06:00–08:30, quand les bateaux reviennent et que le commerce du poisson atteint son apogée.<br/><br/><strong>Pour le paysage :</strong> après 17:30, pour une promenade facile sur la plage et le coucher de soleil atlantique sur les barques peintes.`,
+        es: `<strong>Para la cultura:</strong> 06:00–08:30, cuando los barcos regresan y la venta de pescado alcanza su punto máximo.<br/><br/><strong>Para el paisaje:</strong> después de las 17:30, para un paseo tranquilo por la playa y el atardecer atlántico sobre los barcos pintados.`,
+        it: `<strong>Per la cultura:</strong> 06:00–08:30, quando le barche rientrano e il commercio del pesce raggiunge il picco.<br/><br/><strong>Per il paesaggio:</strong> dopo le 17:30, per una facile passeggiata sulla spiaggia e il tramonto atlantico sui barche dipinte.`,
       } as T,
     },
     {
-      q: { zh: `交通方式及周边设施如何？`, en: `How do I get there, and what facilities are nearby?`, pt: `Como chegar e que serviços existem por perto?` } as T,
+      q: { zh: `交通方式及周边设施如何？`, en: `How do I get there, and what facilities are nearby?`, pt: `Como chegar e que serviços existem por perto?`, de: `Wie komme ich hin und was gibt es in der Nähe?`, fr: `Comment y aller et quels services se trouvent à proximité ?`, es: `¿Cómo llego y qué servicios hay cerca?`, it: `Come ci arrivo e quali servizi ci sono vicino?` } as T,
       a: {
         zh: `栈桥位于圣玛丽亚镇的正中心，从镇上绝大多数酒店和民宿步行 5–15 分钟即可抵达。周边海滨大道（Avenida da Praia）沿线遍布餐馆、咖啡馆和冲浪俱乐部，游览结束后就餐或休息很方便。`,
-        en: `The pier sits in the centre of Santa Maria town, walkable from most hotels and guesthouses in 5–15 minutes. Along Avenida da Praia you’ll find restaurants, cafés and surf clubs for an easy stop afterwards.`,
+        en: `The pier sits in the centre of Santa Maria town, walkable from most hotels and guesthouses in 5–15 minutes. Along Avenida da Praia you'll find restaurants, cafés and surf clubs for an easy stop afterwards.`,
         pt: `O pontão fica mesmo no centro de Santa Maria, a 5–15 minutos a pé da maioria dos hotéis e alojamentos. Na Avenida da Praia há muitos restaurantes, cafés e clubes de surf para descansar depois.`,
+        de: `Die Pier liegt im Zentrum der Stadt Santa Maria und ist von den meisten Hotels und Pensionen in 5–15 Minuten zu Fuß erreichbar. An der Avenida da Praia finden Sie Restaurants, Cafés und Surfclubs für einen entspannten Stopp danach.`,
+        fr: `La jetée se trouve au centre de la ville de Santa Maria, accessible à pied depuis la plupart des hôtels et guesthouses en 5 à 15 minutes. Le long de l'Avenida da Praia, vous trouverez restaurants, cafés et clubs de surf pour une pause facile.`,
+        es: `El muelle está en el centro de Santa Maria, a 5–15 minutos a pie de la mayoría de los hoteles y pensiones. A lo largo de la Avenida da Praia hay restaurantes, cafés y clubes de surf para una parada fácil después.`,
+        it: `Il pontile si trova nel centro di Santa Maria, raggiungibile a piedi dalla maggior parte di hotel e pensioni in 5–15 minuti. Lungo l'Avenida da Praia troverete ristoranti, caffè e club di surf per una sosta comoda.`,
       } as T,
     },
   ],
@@ -432,9 +468,9 @@ export const leaveNoTrace = {
   sectionNum: { zh: `游览公约`, en: `Visitor Code`, pt: `Código do Visitante` } as T,
   heading: { zh: `海岸共生<em class="text-[color:var(--color-emerald)]">准则</em>`, en: `Coexistence<em class="text-[color:var(--color-emerald)]"> code</em>`, pt: `Regras de<em class="text-[color:var(--color-emerald)]"> convivência</em>` } as T,
   subtitle: {
-    zh: `圣玛丽亚的沙滩与栈桥不仅是风景，更是当地人赖以生存的“海上农场”。请在到访前阅读并承诺遵守以下行为准则，让这片海岸长久保持它的纯粹与活力。`,
-    en: `Santa Maria’s beach and pier are not only scenery — they are also a working “sea farm” that supports local livelihoods. Please read and commit to the guidelines below so the shore can remain clean and alive.`,
-    pt: `A praia e o pontão de Santa Maria não são apenas paisagem — são também uma “quinta no mar” que sustenta a vida local. Leia e cumpra as regras abaixo para manter esta costa pura e viva.`,
+    zh: `圣玛丽亚的沙滩与栈桥不仅是风景，更是当地人赖以生存的"海上农场"。请在到访前阅读并承诺遵守以下行为准则，让这片海岸长久保持它的纯粹与活力。`,
+    en: `Santa Maria's beach and pier are not only scenery — they are also a working "sea farm" that supports local livelihoods. Please read and commit to the guidelines below so the shore can remain clean and alive.`,
+    pt: `A praia e o pontão de Santa Maria não são apenas paisagem — são também uma "quinta no mar" que sustenta a vida local. Leia e cumpra as regras abaixo para manter esta costa pura e viva.`,
   } as T,
   rules: [
     {
@@ -510,7 +546,7 @@ export const partners = {
       url: 'https://www.ease.gov.cv/',
       abbr: 'EASE',
       note: { zh: `佛得角政府 · 入境预登记`, en: `Cape Verde Government · Entry Pre-Registration`, pt: `Governo de Cabo Verde · Pré-registo de Entrada`, cri: `Govérnu di Cabo Verde · Pré-registu` } as T,
-      attr: { zh: `纯 .gov.cv 政府域名。这是佛得角政府为国际游客设立的“电子旅行授权（EASE）”和“机场安全税（TSA）”官方支付平台。所有前往萨尔岛圣玛丽亚游览的国际游客，均需通过此官方渠道完成出行前的强制性入境申报。`, en: `A pure .gov.cv government domain. Cape Verde's official platform for EASE (electronic travel authorisation) and TSA (airport security tax) payments. All international travellers visiting Santa Maria, Sal must complete the mandatory pre-travel entry registration here.`, pt: `Domínio governamental .gov.cv. Plataforma oficial do Governo de Cabo Verde para pagamento da autorização eletrónica EASE e da taxa TSA. Todos os viajantes internacionais que visitam Santa Maria, Sal, devem fazer aqui o pré-registo obrigatório antes da viagem.`, cri: `Domíniu gov.cv. Plataforma ofisial di Govérnu di Cabo Verde pa pagamentu di autorizason eletróniku EASE y taxa TSA. Tudu viajanti internasional ki ta bai visita Santa Maria, Sal, ten di fazé pré-registu obrigatóriu antis di viaji li.` } as T,
+      attr: { zh: `纯 .gov.cv 政府域名。这是佛得角政府为国际游客设立的"电子旅行授权（EASE）"和"机场安全税（TSA）"官方支付平台。所有前往萨尔岛圣玛丽亚游览的国际游客，均需通过此官方渠道完成出行前的强制性入境申报。`, en: `A pure .gov.cv government domain. Cape Verde's official platform for EASE (electronic travel authorisation) and TSA (airport security tax) payments. All international travellers visiting Santa Maria, Sal must complete the mandatory pre-travel entry registration here.`, pt: `Domínio governamental .gov.cv. Plataforma oficial do Governo de Cabo Verde para pagamento da autorização eletrónica EASE e da taxa TSA. Todos os viajantes internacionais que visitam Santa Maria, Sal, devem fazer aqui o pré-registo obrigatório antes da viagem.`, cri: `Domíniu gov.cv. Plataforma ofisial di Govérnu di Cabo Verde pa pagamentu di autorizason eletróniku EASE y taxa TSA. Tudu viajanti internasional ki ta bai visita Santa Maria, Sal, ten di fazé pré-registu obrigatóriu antis di viaji li.` } as T,
     },
     {
       name: { zh: `ENAPOR - Portos de Cabo Verde（佛得角国家港口与海事管理局）`, en: `ENAPOR — Portos de Cabo Verde`, pt: `ENAPOR — Portos de Cabo Verde`, cri: `ENAPOR — Portus di Cabo Verde` } as T,
@@ -531,14 +567,14 @@ export const partners = {
 
 // ── Footer (updated) ──
 export const footer = {
-  cta: { zh: `今天，去<br/><em class="text-[color:var(--color-sun)]">遇见渔火</em>。`, en: `Today, go<br/><em class="text-[color:var(--color-sun)]">meet the catch</em>.`, pt: `Hoje, vá<br/><em class="text-[color:var(--color-sun)]">encontrar o pescado</em>.`, cri: `Oji, bai<br/><em class="text-[color:var(--color-sun)]">inkontra piski</em>.` } as T,
-  address: { zh: `圣玛丽亚栈桥 · Santa Maria, Sal · 佛得角（Cabo Verde）`, en: `The Pier of Santa Maria · Santa Maria, Sal · Cape Verde`, pt: `Pontão de Santa Maria · Santa Maria, Sal · Cabo Verde`, cri: `Puntan di Santa Maria · Santa Maria, Sal · Cabo Verde` } as T,
-  copyright: { zh: `© 2026 Santa Maria Pier 保留所有权利。`, en: `© 2026 Santa Maria Pier. All rights reserved.`, pt: `© 2026 Santa Maria Pier. Todos os direitos reservados.`, cri: `© 2026 Santa Maria Pier. Tudu direitu reservadu.` } as T,
-  disclaimer: { zh: `本网站是一个独立的第三方旅游资讯项目。我们与当地政府或其他官方机构没有任何关联。`, en: `This website is an independent third-party tourism information project. We are not affiliated with any local government or official entity.`, pt: `Este site é um projeto independente de informações turísticas de terceiros. Não temos vínculo com nenhum governo local ou entidade oficial.`, cri: `Kel site é un projétu independenti di informason turístiku di terceiru. Nós nha ten ligason ku govérnu lokal o entidadi ofisial.` } as T,
-  privacy: { zh: `隐私政策`, en: `Privacy Policy`, pt: `Política de Privacidade`, cri: `Polítika di Privacidad` } as T,
-  terms: { zh: `服务条款`, en: `Terms of Service`, pt: `Termos de Serviço`, cri: `Termus di Sirvisu` } as T,
-  cookies: { zh: `Cookie 设置`, en: `Cookie Settings`, pt: `Configurações de Cookies`, cri: `Kukis` } as T,
-  leaveNoTrace: { zh: `游览公约`, en: `Visitor Code`, pt: `Código do Visitante`, cri: `Kódigu di Visitanti` } as T,
+  cta: { zh: `今天，去<br/><em class="text-[color:var(--color-sun)]">遇见渔火</em>。`, en: `Today, go<br/><em class="text-[color:var(--color-sun)]">meet the catch</em>.`, pt: `Hoje, vá<br/><em class="text-[color:var(--color-sun)]">encontrar o pescado</em>.`, cri: `Oji, bai<br/><em class="text-[color:var(--color-sun)]">inkontra piski</em>.`, de: `Heute geh<br/><em class="text-[color:var(--color-sun)]">triff den Fang</em>.`, fr: `Aujourd'hui, allez<br/><em class="text-[color:var(--color-sun)]">rencontrer la pêche</em>.`, es: `Hoy, ve<br/><em class="text-[color:var(--color-sun)]">a conocer la captura</em>.`, it: `Oggi, vai<br/><em class="text-[color:var(--color-sun)]">a incontrare il pescato</em>.` } as T,
+  address: { zh: `圣玛丽亚栈桥 · Santa Maria, Sal · 佛得角（Cabo Verde）`, en: `The Pier of Santa Maria · Santa Maria, Sal · Cape Verde`, pt: `Pontão de Santa Maria · Santa Maria, Sal · Cabo Verde`, cri: `Puntan di Santa Maria · Santa Maria, Sal · Cabo Verde`, de: `Der Pier von Santa Maria · Santa Maria, Sal · Cabo Verde`, fr: `La jetée de Santa Maria · Santa Maria, Sal · Cap-Vert`, es: `El muelle de Santa Maria · Santa Maria, Sal · Cabo Verde`, it: `Il pontile di Santa Maria · Santa Maria, Sal · Capo Verde` } as T,
+  copyright: { zh: `© 2026 Santa Maria Pier 保留所有权利。`, en: `© 2026 Santa Maria Pier. All rights reserved.`, pt: `© 2026 Santa Maria Pier. Todos os direitos reservados.`, cri: `© 2026 Santa Maria Pier. Tudu direitu reservadu.`, de: `© 2026 Santa Maria Pier. Alle Rechte vorbehalten.`, fr: `© 2026 Santa Maria Pier. Tous droits réservés.`, es: `© 2026 Santa Maria Pier. Todos los derechos reservados.`, it: `© 2026 Santa Maria Pier. Tutti i diritti riservati.` } as T,
+  disclaimer: { zh: `本网站是一个独立的第三方旅游资讯项目。我们与当地政府或其他官方机构没有任何关联。`, en: `This website is an independent third-party tourism information project. We are not affiliated with any local government or official entity.`, pt: `Este site é um projeto independente de informações turísticas de terceiros. Não temos vínculo com nenhum governo local ou entidade oficial.`, cri: `Kel site é un projétu independenti di informason turístiku di terceiru. Nós nha ten ligason ku govérnu lokal o entidadi ofisial.`, de: `Diese Website ist ein unabhängiges touristisches Informationsprojekt eines Drittanbieters. Wir sind mit keiner lokalen Regierung oder offiziellen Stelle verbunden.`, fr: `Ce site est un projet indépendant d'information touristique de tiers. Nous ne sommes affiliés à aucun gouvernement local ou entité officielle.`, es: `Este sitio web es un proyecto independiente de información turística de terceros. No estamos afiliados con ningún gobierno local ni entidad oficial.`, it: `Questo sito è un progetto indipendente di informazioni turistiche di terze parti. Non siamo affiliati a nessun governo locale o ente ufficiale.` } as T,
+  privacy: { zh: `隐私政策`, en: `Privacy Policy`, pt: `Política de Privacidade`, cri: `Polítika di Privacidad`, de: `Datenschutz`, fr: `Confidentialité`, es: `Privacidad`, it: `Privacy` } as T,
+  terms: { zh: `服务条款`, en: `Terms of Service`, pt: `Termos de Serviço`, cri: `Termus di Sirvisu`, de: `Nutzungsbedingungen`, fr: `Conditions d'utilisation`, es: `Términos del servicio`, it: `Termini di servizio` } as T,
+  cookies: { zh: `Cookie 设置`, en: `Cookie Settings`, pt: `Configurações de Cookies`, cri: `Kukis`, de: `Cookie-Einstellungen`, fr: `Paramètres des cookies`, es: `Configuración de cookies`, it: `Impostazioni cookie` } as T,
+  leaveNoTrace: { zh: `游览公约`, en: `Visitor Code`, pt: `Código do Visitante`, cri: `Kódigu di Visitanti`, de: `Besucherkodex`, fr: `Code du visiteur`, es: `Código del visitante`, it: `Codice del visitante` } as T,
 };
 
 // ── Privacy Policy Page ──
@@ -651,6 +687,22 @@ export const cookies = {
 
 // ── Meta ──
 export const meta = {
-  title: { zh: `Pontão de Santa Maria · 圣玛丽亚栈桥 — 萨尔岛清晨渔市与白沙日落`, en: `Pontão de Santa Maria · The Pier of Santa Maria in Sal, Cape Verde`, pt: `Pontão de Santa Maria · O pontão emblemático de Sal, Cabo Verde` } as T,
-  description: { zh: `圣玛丽亚栈桥（Pontão de Santa Maria）完整指南：清晨渔获拍卖与沙滩临时渔市、彩绘渔船、镇中心步行可达。提示：栈桥主体因风暴损毁封闭重建中（预计 2027 年完工），海滩正常开放。`, en: `Your field guide to the Pier of Santa Maria (Pontão de Santa Maria): dawn fish auctions and the temporary beach market, painted fishing boats, and an easy walk from Santa Maria town centre. Note: the pier structure is fenced off for reconstruction after storm damage (expected completion: 2027), while the beach remains open.`, pt: `Guia completo do Pontão de Santa Maria: leilão do peixe ao amanhecer e mercado provisório na areia, barcos de pesca pintados e acesso a pé pelo centro de Santa Maria. Nota: o pontão está vedado para reconstrução após danos de tempestade (conclusão prevista: 2027), enquanto a praia continua aberta.` } as T,
+  title: {
+    zh: `Pontão de Santa Maria · 圣玛丽亚栈桥 — 萨尔岛清晨渔市与白沙日落`,
+    en: `Pontão de Santa Maria · The Pier of Santa Maria in Sal, Cape Verde`,
+    pt: `Pontão de Santa Maria · O pontão emblemático de Sal, Cabo Verde`,
+    de: `Pontão de Santa Maria · Der Pier von Santa Maria, Sal, Cabo Verde`,
+    fr: `Pontão de Santa Maria · La jetée de Santa Maria, Sal, Cap-Vert`,
+    es: `Pontão de Santa Maria · El muelle de Santa Maria, Sal, Cabo Verde`,
+    it: `Pontão de Santa Maria · Il pontile di Santa Maria, Sal, Capo Verde`,
+  } as T,
+  description: {
+    zh: `圣玛丽亚栈桥（Pontão de Santa Maria）完整指南：清晨渔获拍卖与沙滩临时渔市、彩绘渔船、镇中心步行可达。提示：栈桥主体因风暴损毁封闭重建中（预计 2027 年完工），海滩正常开放。`,
+    en: `Your field guide to the Pier of Santa Maria (Pontão de Santa Maria): dawn fish auctions and the temporary beach market, painted fishing boats, and an easy walk from Santa Maria town centre. Note: the pier structure is fenced off for reconstruction after storm damage (expected completion: 2027), while the beach remains open.`,
+    pt: `Guia completo do Pontão de Santa Maria: leilão do peixe ao amanhecer e mercado provisório na areia, barcos de pesca pintados e acesso a pé pelo centro de Santa Maria. Nota: o pontão está vedado para reconstrução após danos de tempestade (conclusão prevista: 2027), enquanto a praia continua aberta.`,
+    de: `Ihr Feldführer zum Pier von Santa Maria (Pontão de Santa Maria): morgendliche Fischauktionen und der temporäre Strandmarkt, bunt bemalte Fischerboote und ein kurzer Spaziergang vom Zentrum von Santa Maria. Hinweis: Die Pier ist nach Sturmschäden für den Wiederaufbau abgesperrt (Fertigstellung voraussichtlich 2027), während der Strand geöffnet bleibt.`,
+    fr: `Votre guide de la jetée de Santa Maria (Pontão de Santa Maria) : les enchères de poisson à l'aube et le marché temporaire sur la plage, les barques de pêche peintes et une courte promenade depuis le centre de Santa Maria. Note : la jetée est clôturée pour reconstruction après une tempête (achèvement prévu en 2027), tandis que la plage reste ouverte.`,
+    es: `Su guía del muelle de Santa Maria (Pontão de Santa Maria): subastas de pescado al amanecer y el mercado temporal de la playa, barcos de pesca pintados y un paseo corto desde el centro de Santa Maria. Nota: el muelle está vallado por reconstrucción tras daños por tormenta (finalización prevista en 2027), mientras la playa permanece abierta.`,
+    it: `La vostra guida al pontile di Santa Maria (Pontão de Santa Maria): le aste del pesce all'alba e il mercato temporaneo sulla spiaggia, le barche da pesca dipinte e una breve passeggiata dal centro di Santa Maria. Nota: il pontile è transennato per la ricostruzione dopo i danni di una tempesta (completamento previsto nel 2027), mentre la spiaggia resta aperta.`,
+  } as T,
 };
